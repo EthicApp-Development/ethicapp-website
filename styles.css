@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito%20Sans&display=swap');
+
+:root {
+    font-family: Nunito Sans, Helvetica Neue, Helvetica, Verdana, sans-serif;
+    --dark_blue_logo: #2649EC;
+    --light_blue_background: #DEE4FC;
+    --gray_content_emphasis: #D7D7D7;
+    --gray_content: #EFEFEF;
+    --gray_border: #BBBBBB;
+    --yellow_highlight: #F9F9BC;
+    --black_text: #333333;
+    --white_background: #FFFFFF;
+}
+
+nav.navbar.navbar-expand {
+    background-color: var(--white_background);
+    border-bottom: solid 0.1em;
+    border-color: var(--gray_border);
+}
+
+img.ethicapp-logo {
+    width: 6em;
+    height: 1.5em;
+}
+
+header {
+    padding: 5% 1%;
+    background-image: url('./assets/AdobeStock_292058596-liso.jpg');
+    color: white;
+}
+
+
+#home-page-img {
+    width: 40em;
+    border-radius: 3px;
+    border: 0.1em solid #DBDFEA;
+}
+
+#image-inner-border {
+    border-radius: 3px;
+    border: 0.3em solid #e5e7eb
+}
+
+#img-outer-border {
+    border-radius: 3px;
+    border: 0.1em solid #DBDFEA
+}
+
+
+div.row.white-row {
+    background-color: var(--white_background);
+}
+
+div.row.gray-row {
+    background-color: var(--gray_content);
+}
+
+a.characteristics-link {
+    text-decoration: none;
+    color: var(--black_text);
+}
+
+img.card-img-top {
+    width: 5em;
+    fill: var(--dark_blue_logo);
+}
+
+article.characteristics-row {
+    padding: 5% 0%;
+}
+
+article.even-row {
+    background-color: var(--gray_content);
+}
+
+article.odd-row {
+    background-color: var(--white_background);
+}
+
+img.characteristics-img {
+    width: 40em;
+    border-radius: 2%;
+    transition: transform 0.3s;
+}
+
+img.characteristics-img:hover {
+    transform: scale(1.05);
+}
+
+div.characteristics-text {
+    padding: 15% 0% 10%;
+}
+
+img.logo-img-horizontal {
+    width: 10em;
+}
+
+img.logo-img {
+    width: 5em;
+}
+
+section.data-section {
+    padding: 4% 1%;
+    border: solid rgba(128, 128, 128, 0.1);
+}
+
+img.footer-icon {
+    width: 15%
+}
+
+li.list-group-item.list-group-item-action {
+    border: 0;
+}
+
+.member-description {
+    background-color: var(--gray_content);
+    padding: 6px;
+    border-radius: 6px;
+    margin-top: -4px;
+}
+
+div.chart-img {
+    margin-left: 30;
+}
+
+img#team-picture {
+    height: 30em;
+    padding-left: 15em;
+}
