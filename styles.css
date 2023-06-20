@@ -12,7 +12,7 @@
     --white_background: #FFFFFF;
 }
 
-nav.navbar.navbar-expand {
+nav.navbar.navbar-expand-lg {
     background-color: var(--white_background);
     border-bottom: solid 0.1em;
     border-color: var(--gray_border);
@@ -31,7 +31,6 @@ header {
 
 
 #home-page-img {
-    width: 40em;
     border-radius: 3px;
     border: 0.1em solid #DBDFEA;
 }
@@ -60,25 +59,29 @@ a.characteristics-link {
     color: var(--black_text);
 }
 
+div.characteristics-col {
+    transition: transform 0.3s;
+}
+
+div.characteristics-col:hover {
+    background-color: var(--gray_content_emphasis);
+    transform: scale(1.05);
+}
+
 img.card-img-top {
     width: 5em;
     fill: var(--dark_blue_logo);
 }
 
-article.characteristics-row {
-    padding: 5% 0%;
-}
-
-article.even-row {
+.row.even-row {
     background-color: var(--gray_content);
 }
 
-article.odd-row {
+.row.odd-row {
     background-color: var(--white_background);
 }
 
 img.characteristics-img {
-    width: 40em;
     border-radius: 2%;
     transition: transform 0.3s;
 }
@@ -87,9 +90,6 @@ img.characteristics-img:hover {
     transform: scale(1.05);
 }
 
-div.characteristics-text {
-    padding: 15% 0% 10%;
-}
 
 img.logo-img-horizontal {
     width: 10em;
@@ -126,4 +126,63 @@ div.chart-img {
 img#team-picture {
     height: 30em;
     padding-left: 15em;
+}
+
+img.institution-img {
+    height: 8em;
+}
+
+div.institution-card {
+    border: 0;
+}
+
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+@media (min-width: 360px) {
+    .characteristics-text {
+        padding-top: 5%;
+    }
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+    }
+
+    .characteristics-text {
+        padding-top: 0%;
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+    transform: translateX(0);
+}
+
+@media(min-width:992px) {
+    .characteristics-text {
+        padding-top: 10%;
+    }
 }
