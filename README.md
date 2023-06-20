@@ -1,25 +1,22 @@
-# Ethicapp-website
+# EthicApp Website
 
-Página web para el proyecto EthicApp inspirada en la lading page de [Kanaries](https://kanaries.net/home)
+Website for the EthicApp project inspired by the landing page of [Kanaries](https://kanaries.net/home).
 
-## Dependencias
+## Dependencies
 
-La landing page para ethic app está siendo desarrollada usando las siguientes librerías (que son importadas mediante CDN):
+The landing page for EthicApp is being developed using the following libraries (imported via CDN):
 
 - [Bootstrap 5](https://getbootstrap.com/)
-- [JSCharting](https://jscharting.com/) (para el organigrama del equipo de EthicApp)
+- [JSCharting](https://jscharting.com/) (for the EthicApp team's organizational chart)
 
-## Por hacer
+## To Do
 
-- Agregar responsividad, de momento su correcta visualización esta hecha para notebook (1280x276) que es donde está siendo desarrollada, sin embargo será adaptada para su correcta visualización en desktop, notebook, tablet y celular.
-- Agregar videos/gifs para demostración de características teniendo como ejemplo el sitio web de [Kanaries](https://kanaries.net/home)
-- Agregar estilos a sección desarrollo
-- Agregar footer
-- Obtener testimonios de uso de la aplicación, nombres potenciales:
-  - Yannis Dimitriadis
-  - César Collazos
-  - Davinia Hernandez-Leo
-- Agregar toogle en organigrama para mostrar detalles de cada miembro
-- En sección experiencias cambiar grupo con fotos de organización por slideshow horizontal (carousel)
-- Cambiar borde foto junto a promesa de valor EthicApp
-- Obtener y agregar foto de Vicente Gana para organigrama
+- Add responsiveness; currently, it is designed for a notebook (1280x276) where it is being developed, but it will be adapted for proper display on desktop, notebook, tablet, and mobile.
+- Add videos/gifs to demonstrate features, taking inspiration from the [Kanaries](https://kanaries.net/home) website.
+- Add styles to the development section.
+- Add footer.
+- Add testimonials.
+- Add toggle in the organizational chart to show details of each member.
+- In the experiences section, replace the group photo with a horizontal slideshow (carousel).
+- Change the border of the photo next to the EthicApp value proposition.
+- Obtain and add Vicente Gana's photo for the organizational chart.
