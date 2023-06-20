@@ -11,6 +11,8 @@ The landing page for EthicApp is being developed using the following libraries (
 
 ## To Do
 
+- Add meta tags for thumbnail links (WhatsApp)
+- Add tags for SEO
 - Add responsiveness; currently, it is designed for a notebook (1280x276) where it is being developed, but it will be adapted for proper display on desktop, notebook, tablet, and mobile.
 - Add videos/gifs to demonstrate features, taking inspiration from the [Kanaries](https://kanaries.net/home) website.
 - Add styles to the development section.
