@@ -15,8 +15,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jscharting.com/latest/jscharting.js"></script>
-    <script src="https://code.jscharting.com/latest/modules/types.js"></script> -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-org-chart@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
@@ -24,8 +22,7 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav id="app-navbar" class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="./assets/EthicApp-logo.png" alt="ethicapp-logo" class="ethicapp-logo">
@@ -43,7 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#experience-section">Experiencias</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-none">
                         <a class="nav-link" href="#testimonials-section">Testimonios</a>
                     </li>
                     <li class="nav-item">
@@ -64,6 +61,8 @@
             </div>
         </div>
     </nav>
+
+
 
     <header>
         <div class="container-fluid">
@@ -89,574 +88,593 @@
         </div>
     </header>
 
-    <section class="data-section" id="characteristics-section">
-        <div class="container-fluid">
+    <div data-bs-spy="scroll" data-bs-target="#app-navbar">
+        <section class="data-section" id="characteristics-section">
+            <div class="container-fluid">
 
-            <h1 class="text-start fw-bold">Características</h1>
-            <hr>
+                <h1 class="text-start fw-bold">Características</h1>
+                <hr>
 
-            <div class="row">
-                <div class="col characteristics-col">
-                    <a href="#easy-to-use" class="characteristics-link">
-                        <div class="text-center">
-                            <img src="./assets/icons/check-all-icon.svg" class="card-img-top" alt="...">
-                            <h5 class="card-title">Fácil de usar</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col characteristics-col">
-                    <a href="#teacher-support" class="characteristics-link">
-                        <div class="text-center">
-                            <img src="./assets/icons/teacher-icon.svg" class="card-img-top" alt="...">
-                            <h5 class="card-title">Un apoyo al profesor</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col characteristics-col">
-                    <a href="#class-participation" class="characteristics-link">
-                        <div class="text-center">
-                            <img src="./assets/icons/participation-icon.svg" class="card-img-top" alt="...">
-                            <h5 class="card-title">Sesiones de casos altamente participativas</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col characteristics-col">
-                    <a href="#21century-skills" class="characteristics-link">
-                        <div class="text-center">
-                            <img src="./assets/icons/21skills-icon.svg" class="card-img-top" alt="...">
-                            <h5 class="card-title">Enfocada en habilidades del siglo 21</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col characteristics-col">
-                    <a href="#teaching-research" class="characteristics-link">
-                        <div class="text-center">
-                            <img src="./assets/icons/research_icon.svg" class="card-img-top" alt="...">
-                            <h5 class="card-title">Pensada para la docencia e investigación</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="characteristics-detail-section">
-        <div class="container-fluid">
-
-            <article class="characteristics-row" id="easy-to-use">
-                <div class="row even-row py-3">
-                    <div class="col-md order-md-1">
-                        <img src="./assets/home-page-img.png" alt="home-page-img"
-                            class="shadow characteristics-img img-fluid">
-                    </div>
-                    <div class="col-md order-md-2">
-                        <div class="characteristics-text">
-                            <h1 class="text-start fw-bold">
-                                De fácil y rápido uso
-                            </h1>
-                            <p class="text-start">
-                                Casos de ética y actividades prediseñadas disponibles para el uso; Utilizable desde
-                                teléfonos y computadores portátiles, desde la sala de clases y la casa
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="characteristics-row" id="teacher-support">
-                <div class="row odd-row py-3">
-                    <div class="col-md order-md-2">
-                        <img src="./assets/home-page-img.png" alt="home-page-img"
-                            class="shadow characteristics-img img-fluid">
-                    </div>
-                    <div class="col-md order-md-1">
-                        <div class="characteristics-text">
-                            <h1 class="text-start fw-bold">
-                                Un apoyo al profesor
-                            </h1>
-                            <p class="text-start">
-                                Presenta respuestas de los estudiantes y estadísticas en tiempo real al profesor,
-                                permitiéndole elaborar una mejor retroalimentación, y un seguimiento personalizado a los
-                                estudiantes.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="characteristics-row" id="class-participation">
-                <div class="row even-row py-3">
-                    <div class="col-md order-md-1">
-                        <img src="./assets/home-page-img.png" alt="home-page-img"
-                            class="shadow characteristics-img img-fluid">
-                    </div>
-                    <div class="col-md order-md-2">
-                        <div class="characteristics-text">
-                            <h1 class="text-start fw-bold">
-                                Sesiones de casos altamente participativas
-                            </h1>
-                            <p class="text-start">
-                                Todos los estudiantes participan, con igualdad de oportunidades, y en forma anónima o
-                                identificada según se requiera.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="characteristics-row" id="21century-skills">
-                <div class="row odd-row py-3">
-                    <div class="col-md order-md-2">
-                        <img src="./assets/home-page-img.png" alt="home-page-img"
-                            class="shadow characteristics-img img-fluid">
-                    </div>
-                    <div class="col-md order-md-1">
-                        <div class="characteristics-text">
-                            <h1 class="text-start fw-bold">
-                                Enfocada en el desarrollo habilidades del siglo 21
-                            </h1>
-                            <p class="text-start">
-                                Actividades de análisis de casos de ética que estimulan el pensamiento crítico, la
-                                elaboración e intercambio de argumentos e ideas, la observación y análisis respetuoso de
-                                distintos puntos de vista, la comunicación escrita y trabajo colaborativo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="characteristics-row" id="teaching-research">
-                <div class="row even-row py-3">
-                    <div class="col-md order-md-1">
-                        <img src="./assets/home-page-img.png" alt="home-page-img"
-                            class="shadow characteristics-img img-fluid">
-                    </div>
-                    <div class="col-md order-md-2">
-                        <div class="characteristics-text">
-                            <h1 class="text-start fw-bold">
-                                Pensada para la docencia y la investigación
-                            </h1>
-                            <p class="text-start">
-                                Diseñada para ser utilizada tanto por profesores de ética, como por profesores de otras
-                                disciplinas. Los datos recopilados por EthicApp pueden ser exportados para investigación
-                                bajo el consentimiento de los etudiantes, y respetando la legislación vigente en materia
-                                de protección de datos personales.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <section class="data-section" id="experience-section">
-        <div class="container-fluid">
-
-            <h1 class="text-start fw-bold">Experiencias</h1>
-            <hr>
-
-            <div class="row">
-                <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item institution active">
-                            <div class="col-md-3">
-                                <div class="card text-center institution-card">
-                                    <div class="card-img">
-                                        <img src="assets/institutions/buap-logo.png" class="img-fluid institution-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <h6 class="card-title">Benemérita Universidad Autónoma de Puebla</h6>
-                                        <div class="card-subtitle">México</div>
-                                    </div>
-                                </div>
+                <div class="row">
+                    <div class="col characteristics-col">
+                        <a href="#easy-to-use" class="characteristics-link">
+                            <div class="text-center">
+                                <img src="./assets/icons/check-all-icon.svg" class="card-img-top" alt="...">
+                                <h5 class="card-title">Fácil de usar</h5>
                             </div>
-                        </div>
-                        <div class="carousel-item institution">
-                            <div class="col-md-3">
-                                <div class="card text-center institution-card">
-                                    <div class="card-img">
-                                        <img src="/assets/institutions/uchile-logo.jpg"
-                                            class="img-fluid institution-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Universidad de Chile</h5>
-                                        <div class="card-subtitle">Chile</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item institution">
-                            <div class="col-md-3">
-                                <div class="card text-center institution-card">
-                                    <div class="card-img">
-                                        <img src="assets/institutions/uandes-logo.jpg"
-                                            class="img-fluid institution-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Universidad de los Andes</h5>
-                                        <div class="card-subtitle">Chile</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item institution">
-                            <div class="col-md-3">
-                                <div class="card text-center institution-card">
-                                    <div class="card-img">
-                                        <img src="assets/institutions/unicauca-logo.jpg"
-                                            class="img-fluid institution-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Universidad del Cauca</h5>
-                                        <div class="card-subtitle">Colombia</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item institution">
-                            <div class="col-md-3">
-                                <div class="card text-center institution-card">
-                                    <div class="card-img">
-                                        <img src="assets/institutions/uohiggins-logo.jpg"
-                                            class="img-fluid institution-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Universidad de O'Higgins</h5>
-                                        <div class="card-subtitle">Chile</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item institution">
-                            <div class="col-md-3">
-                                <div class="card text-center institution-card">
-                                    <div class="card-img">
-                                        <img src="assets/institutions/upf-logo.jpg" class="img-fluid institution-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Universidad Pompeu Fabra</h5>
-                                        <div class="card-subtitle">España</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item institution">
-                            <div class="col-md-3">
-                                <div class="card text-center institution-card">
-                                    <div class="card-img">
-                                        <img src="assets/institutions/utpl-logo.jpg" class="img-fluid institution-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Universidad Católica de Loja</h5>
-                                        <div class="card-subtitle">Ecuador</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item institution">
-                            <div class="col-md-3">
-                                <div class="card text-center institution-card">
-                                    <div class="card-img">
-                                        <img src="assets/institutions/uvigo-logo.jpg" class="img-fluid institution-img">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Universidad de Vigo</h5>
-                                        <div class="card-subtitle">España</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
-                    <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </a>
-                    <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="data-section" id="testimonials-section">
-        <div class="container-fluid">
-            <h1 class="text-start fw-bold">Testimonios</h1>
-            <hr>
-
-            <div class="row">
-                <div class="col-md">
-                    <h5 class="fst-italic fw-lighter">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        ipsum dui,
-                        fringilla eget luctus et, vulputate at enim. Donec feugiat eros ut metus tempus" - </h5>
-                    <h4> Yannis Dimitriadis</h4>
-                </div>
-
-                <div class="col-md">
-                    <h5 class="fst-italic fw-lighter">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        ipsum dui,
-                        fringilla eget luctus et, vulputate at enim. Donec feugiat eros ut metus tempus" - </h5>
-                    <h4> César Collazos</h4>
-                </div>
-
-                <div class="col-md">
-                    <h5 class="fst-italic fw-lighter">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                        ipsum dui,
-                        fringilla eget luctus et, vulputate at enim. Donec feugiat eros ut metus tempus" - </h5>
-                    <h4> Davinia Hernandez-Leo</h4>
+                    <div class="col characteristics-col">
+                        <a href="#teacher-support" class="characteristics-link">
+                            <div class="text-center">
+                                <img src="./assets/icons/teacher-icon.svg" class="card-img-top" alt="...">
+                                <h5 class="card-title">Un apoyo al profesor</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col characteristics-col">
+                        <a href="#class-participation" class="characteristics-link">
+                            <div class="text-center">
+                                <img src="./assets/icons/participation-icon.svg" class="card-img-top" alt="...">
+                                <h5 class="card-title">Sesiones de casos altamente participativas</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col characteristics-col">
+                        <a href="#21century-skills" class="characteristics-link">
+                            <div class="text-center">
+                                <img src="./assets/icons/21skills-icon.svg" class="card-img-top" alt="...">
+                                <h5 class="card-title">Enfocada en habilidades del siglo 21</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col characteristics-col">
+                        <a href="#teaching-research" class="characteristics-link">
+                            <div class="text-center">
+                                <img src="./assets/icons/research_icon.svg" class="card-img-top" alt="...">
+                                <h5 class="card-title">Pensada para la docencia e investigación</h5>
+                            </div>
+                        </a>
+                    </div>
                 </div>
 
             </div>
+        </section>
 
-        </div>
-    </section>
+        <section id="characteristics-detail-section">
+            <div class="container-fluid">
 
-    <section class="data-section" id="research-section">
-        <div class="container-fluid">
-            <h1 class="text-start fw-bold">Investigaciones</h1>
-            <hr>
-            <p>Las siguiente lista cronológica de publicaciones presenta estudios que se relacionan tanto con el uso de
-                EthicApp en aula como con aspectos técnicos relativos a su desarrollo:</p>
-            <ul class="list-group">
-                <a href="https://doi.org/10.1007/s00779-020-01495-z"
-                    class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="mb-1">Applying the
+                <article class="characteristics-row" id="easy-to-use">
+                    <div class="row even-row py-3">
+                        <div class="col-md order-md-1">
+                            <img src="./assets/home-page-img.png" alt="home-page-img"
+                                class="shadow characteristics-img img-fluid">
+                        </div>
+                        <div class="col-md order-md-2">
+                            <div class="characteristics-text">
+                                <h1 class="text-start fw-bold">
+                                    De fácil y rápido uso
+                                </h1>
+                                <p class="text-start">
+                                    Casos de ética y actividades prediseñadas disponibles para el uso; Utilizable desde
+                                    teléfonos y computadores portátiles, desde la sala de clases y la casa
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="characteristics-row" id="teacher-support">
+                    <div class="row odd-row py-3">
+                        <div class="col-md order-md-2">
+                            <img src="./assets/home-page-img.png" alt="home-page-img"
+                                class="shadow characteristics-img img-fluid">
+                        </div>
+                        <div class="col-md order-md-1">
+                            <div class="characteristics-text">
+                                <h1 class="text-start fw-bold">
+                                    Un apoyo al profesor
+                                </h1>
+                                <p class="text-start">
+                                    Presenta respuestas de los estudiantes y estadísticas en tiempo real al profesor,
+                                    permitiéndole elaborar una mejor retroalimentación, y un seguimiento personalizado a
+                                    los
+                                    estudiantes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="characteristics-row" id="class-participation">
+                    <div class="row even-row py-3">
+                        <div class="col-md order-md-1">
+                            <img src="./assets/home-page-img.png" alt="home-page-img"
+                                class="shadow characteristics-img img-fluid">
+                        </div>
+                        <div class="col-md order-md-2">
+                            <div class="characteristics-text">
+                                <h1 class="text-start fw-bold">
+                                    Sesiones de casos altamente participativas
+                                </h1>
+                                <p class="text-start">
+                                    Todos los estudiantes participan, con igualdad de oportunidades, y en forma anónima
+                                    o
+                                    identificada según se requiera.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="characteristics-row" id="21century-skills">
+                    <div class="row odd-row py-3">
+                        <div class="col-md order-md-2">
+                            <img src="./assets/home-page-img.png" alt="home-page-img"
+                                class="shadow characteristics-img img-fluid">
+                        </div>
+                        <div class="col-md order-md-1">
+                            <div class="characteristics-text">
+                                <h1 class="text-start fw-bold">
+                                    Enfocada en el desarrollo habilidades del siglo 21
+                                </h1>
+                                <p class="text-start">
+                                    Actividades de análisis de casos de ética que estimulan el pensamiento crítico, la
+                                    elaboración e intercambio de argumentos e ideas, la observación y análisis
+                                    respetuoso de
+                                    distintos puntos de vista, la comunicación escrita y trabajo colaborativo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="characteristics-row" id="teaching-research">
+                    <div class="row even-row py-3">
+                        <div class="col-md order-md-1">
+                            <img src="./assets/home-page-img.png" alt="home-page-img"
+                                class="shadow characteristics-img img-fluid">
+                        </div>
+                        <div class="col-md order-md-2">
+                            <div class="characteristics-text">
+                                <h1 class="text-start fw-bold">
+                                    Pensada para la docencia y la investigación
+                                </h1>
+                                <p class="text-start">
+                                    Diseñada para ser utilizada tanto por profesores de ética, como por profesores de
+                                    otras
+                                    disciplinas. Los datos recopilados por EthicApp pueden ser exportados para
+                                    investigación
+                                    bajo el consentimiento de los etudiantes, y respetando la legislación vigente en
+                                    materia
+                                    de protección de datos personales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="data-section" id="experience-section">
+            <div class="container-fluid">
+
+                <h1 class="text-start fw-bold">Experiencias</h1>
+                <hr>
+
+                <div class="row">
+                    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item institution active">
+                                <div class="col-md-3">
+                                    <div class="card text-center institution-card">
+                                        <div class="card-img">
+                                            <img src="assets/institutions/buap-logo.png"
+                                                class="img-fluid institution-img">
+                                        </div>
+                                        <div class="card-body">
+                                            <h6 class="card-title">Benemérita Universidad Autónoma de Puebla</h6>
+                                            <div class="card-subtitle">México</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item institution">
+                                <div class="col-md-3">
+                                    <div class="card text-center institution-card">
+                                        <div class="card-img">
+                                            <img src="/assets/institutions/uchile-logo.jpg"
+                                                class="img-fluid institution-img">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Universidad de Chile</h5>
+                                            <div class="card-subtitle">Chile</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item institution">
+                                <div class="col-md-3">
+                                    <div class="card text-center institution-card">
+                                        <div class="card-img">
+                                            <img src="assets/institutions/uandes-logo.jpg"
+                                                class="img-fluid institution-img">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Universidad de los Andes</h5>
+                                            <div class="card-subtitle">Chile</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item institution">
+                                <div class="col-md-3">
+                                    <div class="card text-center institution-card">
+                                        <div class="card-img">
+                                            <img src="assets/institutions/unicauca-logo.jpg"
+                                                class="img-fluid institution-img">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Universidad del Cauca</h5>
+                                            <div class="card-subtitle">Colombia</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item institution">
+                                <div class="col-md-3">
+                                    <div class="card text-center institution-card">
+                                        <div class="card-img">
+                                            <img src="assets/institutions/uohiggins-logo.jpg"
+                                                class="img-fluid institution-img">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Universidad de O'Higgins</h5>
+                                            <div class="card-subtitle">Chile</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item institution">
+                                <div class="col-md-3">
+                                    <div class="card text-center institution-card">
+                                        <div class="card-img">
+                                            <img src="assets/institutions/upf-logo.jpg"
+                                                class="img-fluid institution-img">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Universidad Pompeu Fabra</h5>
+                                            <div class="card-subtitle">España</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item institution">
+                                <div class="col-md-3">
+                                    <div class="card text-center institution-card">
+                                        <div class="card-img">
+                                            <img src="assets/institutions/utpl-logo.jpg"
+                                                class="img-fluid institution-img">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Universidad Católica de Loja</h5>
+                                            <div class="card-subtitle">Ecuador</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item institution">
+                                <div class="col-md-3">
+                                    <div class="card text-center institution-card">
+                                        <div class="card-img">
+                                            <img src="assets/institutions/uvigo-logo.jpg"
+                                                class="img-fluid institution-img">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Universidad de Vigo</h5>
+                                            <div class="card-subtitle">España</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-section d-none" id="testimonials-section">
+            <div class="container-fluid">
+                <h1 class="text-start fw-bold">Testimonios</h1>
+                <hr>
+
+                <div class="row">
+                    <div class="col-md">
+                        <h5 class="fst-italic fw-lighter">"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nulla
+                            ipsum dui,
+                            fringilla eget luctus et, vulputate at enim. Donec feugiat eros ut metus tempus" - </h5>
+                        <h4> Yannis Dimitriadis</h4>
+                    </div>
+
+                    <div class="col-md">
+                        <h5 class="fst-italic fw-lighter">"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nulla
+                            ipsum dui,
+                            fringilla eget luctus et, vulputate at enim. Donec feugiat eros ut metus tempus" - </h5>
+                        <h4> César Collazos</h4>
+                    </div>
+
+                    <div class="col-md">
+                        <h5 class="fst-italic fw-lighter">"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nulla
+                            ipsum dui,
+                            fringilla eget luctus et, vulputate at enim. Donec feugiat eros ut metus tempus" - </h5>
+                        <h4> Davinia Hernandez-Leo</h4>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="data-section" id="research-section">
+            <div class="container-fluid">
+                <h1 class="text-start fw-bold">Investigaciones</h1>
+                <hr>
+                <p>Las siguiente lista cronológica de publicaciones presenta estudios que se relacionan tanto con el uso
+                    de
+                    EthicApp en aula como con aspectos técnicos relativos a su desarrollo:</p>
+                <ul class="list-group">
+                    <a href="https://doi.org/10.1007/s00779-020-01495-z"
+                        class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">Applying the
+                                concept of implicit HCI
+                                to a groupware
+                                environment for teaching ethics.</h5>
+                            <small>2022</small>
+                        </div>
+                        <p class="mb-1"> Alvarez, C., Zurita, G. & Baloian, N. Applying the
                             concept of implicit HCI
                             to a groupware
-                            environment for teaching ethics.</h5>
-                        <small>2022</small>
-                    </div>
-                    <p class="mb-1"> Alvarez, C., Zurita, G. & Baloian, N. Applying the
-                        concept of implicit HCI
-                        to a groupware
-                        environment for teaching ethics. Pers Ubiquit Comput 26, 1373–1391 (2022).</p>
+                            environment for teaching ethics. Pers Ubiquit Comput 26, 1373–1391 (2022).</p>
 
-                </a>
-                <a href="https://doi.org/10.1007/978-3-031-20218-6_18"
-                    class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="mb-1">
-                            Scaffolding of Intuitionist Ethical Reasoning with Groupware: Do Students’ Stances Change in
-                            Different Countries?
-                        </h5>
-                        <small>2022</small>
-                    </div>
-                    <p class="mb-1"> Álvarez, C., Zurita, G., Farías, A., Collazos, C., González-Calleros, J. M.,
-                        Yunga, M., & Pezoa, Á.
-                        (2022). Scaffolding of Intuitionist Ethical Reasoning with Groupware: Do Students’ Stances
-                        Change in
-                        Different Countries?. In: Wong, LH., Hayashi, Y., Collazos, C.A., Alvarez, C., Zurita, G.,
-                        Baloian,
-                        N. (eds) Collaboration Technologies and Social Computing. CollabTech 2022. Lecture Notes in
-                        Computer
-                        Science, vol 13632. Springer, Cham.</p>
+                    </a>
+                    <a href="https://doi.org/10.1007/978-3-031-20218-6_18"
+                        class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">
+                                Scaffolding of Intuitionist Ethical Reasoning with Groupware: Do Students’ Stances
+                                Change in
+                                Different Countries?
+                            </h5>
+                            <small>2022</small>
+                        </div>
+                        <p class="mb-1"> Álvarez, C., Zurita, G., Farías, A., Collazos, C., González-Calleros, J. M.,
+                            Yunga, M., & Pezoa, Á.
+                            (2022). Scaffolding of Intuitionist Ethical Reasoning with Groupware: Do Students’ Stances
+                            Change in
+                            Different Countries?. In: Wong, LH., Hayashi, Y., Collazos, C.A., Alvarez, C., Zurita, G.,
+                            Baloian,
+                            N. (eds) Collaboration Technologies and Social Computing. CollabTech 2022. Lecture Notes in
+                            Computer
+                            Science, vol 13632. Springer, Cham.</p>
 
-                </a>
-                <a href="https://doi.org/10.1007/978-3-030-85071-5_1"
-                    class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="mb-1">
-                            Automatic
-                            Content Analysis of Student Moral Discourse in a Collaborative Learning Activity
-                        </h5>
-                        <small>2021</small>
-                    </div>
-                    <p class="mb-1"> Alvarez, C., Zurita, G., Carvallo, A., Ramírez, P., Bravo, E., & Baloian, N.
-                        (2021). Automatic
-                        Content Analysis of Student Moral Discourse in a Collaborative Learning Activity. In:
-                        Hernández-Leo,
-                        D., Hishiyama, R., Zurita, G., Weyers, B., Nolte, A., Ogata, H. (eds) Collaboration Technologies
-                        and
-                        Social Computing. CollabTech 2021. Lecture Notes in Computer Science(), vol 12856. Springer,
-                        Cham.</p>
-                </a>
-                <a href="https://doi.org/10.21125/edulearn.2021.0761"
-                    class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="mb-1">
-                            A Collaborative Pedagogical
+                    </a>
+                    <a href="https://doi.org/10.1007/978-3-030-85071-5_1"
+                        class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">
+                                Automatic
+                                Content Analysis of Student Moral Discourse in a Collaborative Learning Activity
+                            </h5>
+                            <small>2021</small>
+                        </div>
+                        <p class="mb-1"> Alvarez, C., Zurita, G., Carvallo, A., Ramírez, P., Bravo, E., & Baloian, N.
+                            (2021). Automatic
+                            Content Analysis of Student Moral Discourse in a Collaborative Learning Activity. In:
+                            Hernández-Leo,
+                            D., Hishiyama, R., Zurita, G., Weyers, B., Nolte, A., Ogata, H. (eds) Collaboration
+                            Technologies
+                            and
+                            Social Computing. CollabTech 2021. Lecture Notes in Computer Science(), vol 12856. Springer,
+                            Cham.</p>
+                    </a>
+                    <a href="https://doi.org/10.21125/edulearn.2021.0761"
+                        class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">
+                                A Collaborative Pedagogical
+                                Activity Design for
+                                Teaching Ethics in a Business School
+                            </h5>
+                            <small>2021</small>
+                        </div>
+                        <p class="mb-1"> Alvarez, C., Zurita, G., & Farias, A. (2021). A Collaborative Pedagogical
                             Activity Design for
-                            Teaching Ethics in a Business School
-                        </h5>
-                        <small>2021</small>
-                    </div>
-                    <p class="mb-1"> Alvarez, C., Zurita, G., & Farias, A. (2021). A Collaborative Pedagogical
-                        Activity Design for
-                        Teaching Ethics in a Business School. EDULEARN21 Proceedings, 1, 3612–3622.</p>
-                </a>
-                <a href="https://doi.org/10.5772/intechopen.96602"
-                    class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="mb-1">
-                            A
+                            Teaching Ethics in a Business School. EDULEARN21 Proceedings, 1, 3612–3622.</p>
+                    </a>
+                    <a href="https://doi.org/10.5772/intechopen.96602"
+                        class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">
+                                A
+                                Social Platform for
+                                Fostering Ethical Education through Role-Playing
+                            </h5>
+                            <small>2021</small>
+                        </div>
+                        <p class="mb-1">Alvarez, C., Zurita, G., Hasbún, B., Peñafiel, S., & Pezoa, Á. (2021). A
                             Social Platform for
-                            Fostering Ethical Education through Role-Playing
-                        </h5>
-                        <small>2021</small>
-                    </div>
-                    <p class="mb-1">Alvarez, C., Zurita, G., Hasbún, B., Peñafiel, S., & Pezoa, Á. (2021). A
-                        Social Platform for
-                        Fostering Ethical Education through Role-Playing. In Factoring Ethics in Technology, Policy
-                        Making
-                        and Regulation. IntechOpen.</p>
-                </a>
-                <a href="https://doi.org/10.1007/978-3-030-28011-6_5"
-                    class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="mb-1">
-                            A
+                            Fostering Ethical Education through Role-Playing. In Factoring Ethics in Technology, Policy
+                            Making
+                            and Regulation. IntechOpen.</p>
+                    </a>
+                    <a href="https://doi.org/10.1007/978-3-030-28011-6_5"
+                        class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">
+                                A
+                                CSCL script for supporting
+                                moral reasoning in the ethics classroom
+                            </h5>
+                            <small>2019</small>
+                        </div>
+                        <p class="mb-1"> Alvarez, C., Zurita, G., Baloian, N., Jerez, O., & Peñafiel, S. (2019). A
                             CSCL script for supporting
-                            moral reasoning in the ethics classroom
+                            moral reasoning in the ethics classroom. Lecture Notes in Computer Science, 11677 LNCS,
+                            62–79.
+                        </p>
+                    </a>
+                </ul>
+
+                <div class="row">
+                    <div class="col">
+                        <h5 class="fw-lighter">
                         </h5>
-                        <small>2019</small>
                     </div>
-                    <p class="mb-1"> Alvarez, C., Zurita, G., Baloian, N., Jerez, O., & Peñafiel, S. (2019). A
-                        CSCL script for supporting
-                        moral reasoning in the ethics classroom. Lecture Notes in Computer Science, 11677 LNCS, 62–79.
-                    </p>
-                </a>
-            </ul>
 
-            <div class="row">
-                <div class="col">
-                    <h5 class="fw-lighter">
-                    </h5>
+                    <div class="col">
+                        <h5 class="fw-lighter">
+                        </h5>
+                    </div>
+
+                    <div class="col">
+                        <h5 class="fw-lighter">
+                        </h5>
+                    </div>
+
                 </div>
+            </div>
+        </section>
 
-                <div class="col">
-                    <h5 class="fw-lighter">
-                    </h5>
-                </div>
+        <section class="data-section" id="team-section">
+            <div class="container-fluid">
+                <h1 class="text-start fw-bold">Equipo</h1>
+                <hr>
+                <!-- <div id="chart-div" class="d-block w-100"></div> -->
+                <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div id="chart-div" class="d-block w-100" style="padding-left: 10%;"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid"
+                                        id="team-picture" alt="...">
+                                </div>
+                            </div>
 
-                <div class="col">
-                    <h5 class="fw-lighter">
-                    </h5>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="data-section" id="team-section">
-        <div class="container-fluid">
-            <h1 class="text-start fw-bold">Equipo</h1>
-            <hr>
-            <!-- <div id="chart-div" class="d-block w-100"></div> -->
-            <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div id="chart-div" class="d-block w-100"></div>
+        <section class="data-section" id="development-section"> d
+            <div class="container-fluid">
+                <!-- <h1 class="text-start fw-bold">Desarrollo</h1>
+                <hr> -->
+                <h1 class="text-center fw-bold">¡Intégrate!</h1>
+                <p class="text-center">Contamos con una organización en Github donde llevamos a delante
+                    el desarrollo de EthicApp</p>
+                <div class="row">
+                    <div class="col-md mb-3 mb-md-0"><a href="https://github.com/EthicApp-Development/organization"
+                            aria-current="page" target="_blank" class="characteristics-link">
+                            <div class="card border-light text-light development-card h-100">
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <img src="assets/github-logo-white.svg"
+                                            class="img-fluid rounded-start development-logo" alt="...">
+                                    </div>
+                                    <div class="col-lg">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center text-lg-start">Visítanos en Github</h5>
+                                            <p class="card-text text-center text-lg-start">Trabaja en el desarrollo
+                                                de
+                                                EthicApp</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col">
-                                <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid"
-                                    id="team-picture" alt="...">
+                    <div class="col-md mb-3 mb-md-0">
+                        <a href="https://opensource.org/license/mit/" aria-current="page" target="_blank"
+                            class="characteristics-link">
+                            <div class="card text-light border-light development-card h-100">
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <img src="assets/mit-logo-white.svg"
+                                            class="img-fluid rounded-start development-logo" alt="...">
+                                    </div>
+                                    <div class="col-lg">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center text-lg-start">Software de código abierto
+                                            </h5>
+                                            <p class="card-text text-center text-lg-start">Distribuido bajo
+                                                licencia
+                                                del MIT</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
+                        </a>
                     </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="data-section" id="development-section">
-        <div class="container-fluid">
-            <!-- <h1 class="text-start fw-bold">Desarrollo</h1>
-            <hr> -->
-            <h1 class="text-center fw-bold">Intégrate!</h1>
-            <p class="text-center">Contamos con una organización en Github donde llevamos a delante
-                el desarrollo de EthicApp</p>
-            <div class="row">
-                <div class="col-md mb-3 mb-md-0"><a href="https://github.com/EthicApp-Development/organization"
-                        aria-current="page" target="_blank" class="characteristics-link">
-                        <div class="card border-light text-light development-card">
-                            <div class="row">
-                                <div class="col-lg">
-                                    <img src="assets/github-logo-white.svg"
-                                        class="img-fluid rounded-start development-logo" alt="...">
-                                </div>
-                                <div class="col-lg">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center text-lg-start">Únetenos en Github!</h5>
-                                        <p class="card-text text-center text-lg-start">Trabaja en el desarrollo
-                                            de
-                                            EthicApp</p>
+                    <div class="col-md mb-3 mb-md-0">
+                        <a href="#" aria-current="page" target="_blank" class="characteristics-link">
+                            <div class="card text-light border-light development-card h-100">
+                                <div class="row">
+                                    <div class="col-lg">
+                                        <img src="assets/discord-logo-white.svg"
+                                            class="img-fluid rounded-start development-logo" alt="...">
+                                    </div>
+                                    <div class="col-lg">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center text-lg-start">Únete a la discusión!</h5>
+                                            <p class="card-text text-center text-lg-start">Contamos con un servidor
+                                                en Discord</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md mb-3 mb-md-0">
-                    <a href="https://opensource.org/license/mit/" aria-current="page" target="_blank"
-                        class="characteristics-link">
-                        <div class="card text-light border-light development-card">
-                            <div class="row">
-                                <div class="col-lg">
-                                    <img src="assets/mit-logo-white.svg"
-                                        class="img-fluid rounded-start development-logo" alt="...">
-                                </div>
-                                <div class="col-lg">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center text-lg-start">Software de código abierto!
-                                        </h5>
-                                        <p class="card-text text-center text-lg-start">Distribuido bajo
-                                            licencia
-                                            del MIT</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md mb-3 mb-md-0">
-                    <a href="#" aria-current="page" target="_blank" class="characteristics-link">
-                        <div class="card text-light border-light development-card">
-                            <div class="row">
-                                <div class="col-lg">
-                                    <img src="assets/discord-logo-white.svg"
-                                        class="img-fluid rounded-start development-logo" alt="...">
-                                </div>
-                                <div class="col-lg">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center text-lg-start">Únete a la discusión!</h5>
-                                        <p class="card-text text-center text-lg-start">Contamos con un servidor
-                                            en Discord</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <footer class="text-bg-dark py-3 px-3 d-flex">
+    <footer class="py-3 px-3 d-flex">
         <div class="container-fluid  border-top">
             <div class="row">
                 <div class="col d-flex">
@@ -690,7 +708,7 @@
                     <div class="row g-0">
                         <div class="col">
                             <img id="member-picture" src="./assets/team-pictures/claudio_alvarez.jpg"
-                                class="img-fluid rounded-start" alt="...">
+                                class="img-fluid rounded-start h-100" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

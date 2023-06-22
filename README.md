@@ -7,7 +7,7 @@ Website for the EthicApp project inspired by the landing page of [Kanaries](http
 The landing page for EthicApp is being developed using the following libraries (imported via CDN):
 
 - [Bootstrap 5](https://getbootstrap.com/)
-- [JSCharting](https://jscharting.com/) (for the EthicApp team's organizational chart)
+- [D3-org-chart](https://www.npmjs.com/package/d3-org-chart) (for the EthicApp team's organizational chart)
 
 ## To Do
 

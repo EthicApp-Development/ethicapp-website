@@ -154,13 +154,22 @@ div.development-card:hover {
 
 #development-section {
     color: white;
-    background-image: url('./assets/wave-img-blur-contrast-2.jpg');
+    background-image: url('./assets/AdobeStock_292058596-liso-gs.jpg');
 }
 
 
 img.footer-logo {
     width: 2em;
 }
+
+
+footer {
+    background-color: #1d1d1d !important;
+}
+
+/* #chart-div {
+    padding: 0 10%;
+} */
 
 
 @media (max-width: 767px) {

@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-	controlCarousel();
 	setUpOrgChart();
+	addEventListener('resize', (event) => {
+		setUpOrgChart();
+	});
+
+	controlCarousel();
 });
 
 function controlCarousel() {
 	let items = document.querySelectorAll('.carousel .institution');
-	console.log('items', items);
 	items.forEach((el) => {
 		const minPerSlide = 4;
 		let next = el.nextElementSibling;
@@ -22,7 +25,75 @@ function controlCarousel() {
 }
 
 function setUpOrgChart() {
-	console.log('height:', window.innerWidth);
+	const orgData = setOrgChartData();
+	const chartParams = setOrgChartParams();
+	const chart = new d3.OrgChart();
+	chart
+		.scaleExtent([1, 1]) //* disable zoom
+		.layout(chartParams.layout)
+		.container('#chart-div')
+		.compact(chartParams.compact)
+		.data(orgData)
+		.nodeHeight((d) => chartParams.nodeHeight)
+		.nodeWidth((d) => {
+			return chartParams.nodeWidth;
+		})
+		.childrenMargin((d) => chartParams.childrenMargin)
+		.compactMarginBetween((d) => chartParams.compactMarginBetween)
+		.compactMarginPair((d) => chartParams.compactMarginPair)
+		.neighbourMargin((a, b) => chartParams.neighbourMargin)
+		.siblingsMargin((d) => chartParams.siblingsMargin)
+		.buttonContent(({ node, state }) => {
+			return `<div style="px;color:#716E7B;border-radius:5px;padding:4px;font-size:10px;margin:auto auto;background-color:white;border: 1px solid #E4E2E9"> <span style="font-size:9px">${
+				node.children
+					? `<i class="fas fa-angle-up"></i>`
+					: `<i class="fas fa-angle-down"></i>`
+			}</span> ${node.data._directSubordinates}  </div>`;
+		})
+		.linkUpdate(function (d, i, arr) {
+			d3.select(this)
+				.attr('stroke', (d) =>
+					d.data._upToTheRootHighlighted ? '#152785' : '#E4E2E9',
+				)
+				.attr('stroke-width', (d) => (d.data._upToTheRootHighlighted ? 5 : 1));
+
+			if (d.data._upToTheRootHighlighted) {
+				d3.select(this).raise();
+			}
+		})
+		.nodeContent((d) => setNodeContent(d))
+		.nodeUpdate(function (d) {
+			// <- normal function
+
+			d3.select(this) // This refers to each node DOM element, including your nodeContent
+				.select('#yourButton') // your node content
+				.on('click', () => {
+					const memberData = d.data;
+					let modalMemberName = document.getElementById('member-name');
+					let modalMemberPicture = document.getElementById('member-picture');
+					let modalMemberRol = document.getElementById('member-rol');
+					let modalMemberInfo = document.getElementById('member-info');
+					modalMemberName.innerText = memberData.name;
+					modalMemberPicture.src = memberData.image;
+					modalMemberRol.innerText = memberData.rol;
+					modalMemberInfo.innerText = memberData.info;
+				});
+		})
+		.setActiveNodeCentered(false)
+		.render();
+	if (chartParams.disablePanning) {
+		d3.select(chart.container()) //* disable panning
+			.select('svg')
+			.on('mousedown.zoom', null)
+			.on('touchstart.zoom', null)
+			.on('touchmove.zoom', null)
+			.on('touchend.zoom', null)
+			.on('mousewheel.zoom', null);
+	}
+	return chart;
+}
+
+function setOrgChartData() {
 	const orgData = [
 		{
 			id: '0',
@@ -106,75 +177,53 @@ function setUpOrgChart() {
 			_expanded: true,
 		},
 	];
-	const chart = new d3.OrgChart();
-	chart
-		.scaleExtent([1, 1]) //* disable zoom
-		.layout('left')
-		.container('#chart-div')
-		.compact(false)
-		.data(orgData)
-		.nodeHeight((d) => 85)
-		.nodeWidth((d) => {
-			return 200;
-		})
-		.childrenMargin((d) => 50)
-		.compactMarginBetween((d) => 25)
-		.compactMarginPair((d) => 50)
-		.neighbourMargin((a, b) => 25)
-		.siblingsMargin((d) => 25)
-		.buttonContent(({ node, state }) => {
-			return `<div style="px;color:#716E7B;border-radius:5px;padding:4px;font-size:10px;margin:auto auto;background-color:white;border: 1px solid #E4E2E9"> <span style="font-size:9px">${
-				node.children
-					? `<i class="fas fa-angle-up"></i>`
-					: `<i class="fas fa-angle-down"></i>`
-			}</span> ${node.data._directSubordinates}  </div>`;
-		})
-		.linkUpdate(function (d, i, arr) {
-			d3.select(this)
-				.attr('stroke', (d) =>
-					d.data._upToTheRootHighlighted ? '#152785' : '#E4E2E9',
-				)
-				.attr('stroke-width', (d) => (d.data._upToTheRootHighlighted ? 5 : 1));
-
-			if (d.data._upToTheRootHighlighted) {
-				d3.select(this).raise();
-			}
-		})
-		.nodeContent((d) => setNodeContent(d))
-		.nodeUpdate(function (d) {
-			// <- normal function
-
-			d3.select(this) // This refers to each node DOM element, including your nodeContent
-				.select('#yourButton') // your node content
-				.on('click', () => {
-					const memberData = d.data;
-					let modalMemberName = document.getElementById('member-name');
-					let modalMemberPicture = document.getElementById('member-picture');
-					let modalMemberRol = document.getElementById('member-rol');
-					let modalMemberInfo = document.getElementById('member-info');
-					modalMemberName.innerText = memberData.name;
-					modalMemberPicture.src = memberData.image;
-					modalMemberRol.innerText = memberData.rol;
-					modalMemberInfo.innerText = memberData.info;
-				});
-		})
-		.render();
-	d3.select(chart.container()) //* disable panning
-		.select('svg')
-		.on('mousedown.zoom', null)
-		.on('touchstart.zoom', null)
-		.on('touchmove.zoom', null)
-		.on('touchend.zoom', null)
-		.on('mousewheel.zoom', null);
+	return orgData;
 }
 
-function setOrgChartData() {
+function setOrgChartParams() {
 	let viewPort = window.innerWidth;
 	let chartParams = {
 		layout: 'top',
+		nodeHeight: 85,
+		nodeWidth: 200,
+		childrenMargin: 50,
+		compactMarginBetween: 25,
+		compactMarginPair: 50,
+		neighbourMargin: 25,
+		siblingsMargin: 25,
+		disablePanning: false,
+		compact: false,
 	};
-	if (viewPort < 1200) {
+	if (viewPort > 992) {
+		chartParams = {
+			layout: 'left',
+			nodeHeight: 85,
+			nodeWidth: 150,
+			childrenMargin: 50,
+			compactMarginBetween: 25,
+			compactMarginPair: 50,
+			neighbourMargin: 25,
+			siblingsMargin: 25,
+			disablePanning: true,
+			compact: true,
+		};
 	}
+	if (viewPort > 1200) {
+		chartParams = {
+			layout: 'left',
+			nodeHeight: 70,
+			nodeWidth: 180,
+			childrenMargin: 50,
+			compactMarginBetween: 25,
+			compactMarginPair: 50,
+			neighbourMargin: 25,
+			siblingsMargin: 25,
+			disablePanning: true,
+			compact: false,
+		};
+	}
+
+	return chartParams;
 }
 
 function setNodeContent(nodeData, index = '', arr = '', state = '') {
