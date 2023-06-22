@@ -15,8 +15,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
-    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
-    <script src="https://code.jscharting.com/latest/modules/types.js"></script>
+    <!-- <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script src="https://code.jscharting.com/latest/modules/types.js"></script> -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-org-chart@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
     <script src="index.js"></script>
 </head>
 
@@ -257,7 +260,7 @@
             <div class="row">
                 <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
+                        <div class="carousel-item institution active">
                             <div class="col-md-3">
                                 <div class="card text-center institution-card">
                                     <div class="card-img">
@@ -270,7 +273,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item institution">
                             <div class="col-md-3">
                                 <div class="card text-center institution-card">
                                     <div class="card-img">
@@ -284,7 +287,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item institution">
                             <div class="col-md-3">
                                 <div class="card text-center institution-card">
                                     <div class="card-img">
@@ -298,7 +301,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item institution">
                             <div class="col-md-3">
                                 <div class="card text-center institution-card">
                                     <div class="card-img">
@@ -312,7 +315,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item institution">
                             <div class="col-md-3">
                                 <div class="card text-center institution-card">
                                     <div class="card-img">
@@ -326,7 +329,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item institution">
                             <div class="col-md-3">
                                 <div class="card text-center institution-card">
                                     <div class="card-img">
@@ -339,7 +342,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item institution">
                             <div class="col-md-3">
                                 <div class="card text-center institution-card">
                                     <div class="card-img">
@@ -352,7 +355,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item institution">
                             <div class="col-md-3">
                                 <div class="card text-center institution-card">
                                     <div class="card-img">
@@ -543,8 +546,8 @@
         <div class="container-fluid">
             <h1 class="text-start fw-bold">Equipo</h1>
             <hr>
-            <div id="chart_div" class="d-block w-100"></div>
-            <!-- <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+            <!-- <div id="chart-div" class="d-block w-100"></div> -->
+            <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                         class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -553,13 +556,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div id="chart_div" class="d-block w-100"></div>
+                        <div id="chart-div" class="d-block w-100"></div>
                     </div>
                     <div class="carousel-item">
                         <div class="row">
                             <div class="col">
-                                <img src="./assets/team-pictures/team_2023.jpg" class="d-block" id="team-picture"
-                                    alt="...">
+                                <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid"
+                                    id="team-picture" alt="...">
                             </div>
                         </div>
 
@@ -576,7 +579,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
- -->
+
         </div>
     </section>
 
@@ -680,6 +683,35 @@
         </div>
     </footer>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="card text-bg-light">
+                    <div class="row g-0">
+                        <div class="col">
+                            <img id="member-picture" src="./assets/team-pictures/claudio_alvarez.jpg"
+                                class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" id="member-name">Card title</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item" id="member-rol">An item</li>
+                                    <li class="list-group-item" id="member-info">A second item</li>
+                                    <li class="list-group-item" id="member-contact">
+                                        <a href="#" class="card-link"><img src="assets/icons/email-icon.svg" alt=""
+                                                class="footer-logo"></a>
+                                        <a href="#" class="card-link"><img src="assets/github-logo.svg" alt=""
+                                                class="footer-logo"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
