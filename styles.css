@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito%20Sans&display=swap');
+
 :root {
     font-family: Nunito Sans, Helvetica Neue, Helvetica, Verdana, sans-serif;
     --dark_blue_logo: #2649EC;
@@ -19,21 +20,11 @@ nav.navbar.navbar-expand-lg {
 
 img.ethicapp-logo {
     width: 6em;
-    height: 1.5em;
 }
 
 header {
-    padding: 3% 1%;
     background-image: url('./assets/AdobeStock_292058596-liso.jpg');
     color: white;
-}
-
-header p {
-    font-size: 18pt;
-}
-
-header h1 {
-    margin-top: 1.5em;
 }
 
 #home-page-img {
@@ -161,23 +152,48 @@ div.development-card:hover {
     background-image: url('./assets/AdobeStock_292058596-liso-gs.jpg');
 }
 
-img.footer-logo {
-    width: 2em;
-}
 
 footer {
-    background-color: #1d1d1d !important;
+    background-color: #1d1d1d;
 }
 
 
-/* #chart-div {
-    padding: 0 10%;
-} */
+@media (min-width: 360px) {
+
+    header {
+        padding: 3% 1%;
+    }
+
+    header p {
+        font-size: 1.3em
+    }
+
+    .characteristics-text {
+        padding-top: 5%;
+    }
+
+    img.development-logo {
+        width: 7em;
+        margin: 1em 6.5em 0em;
+    }
+
+    #footer-uandes-logo {
+        width: 15em;
+    }
+
+    #footer-uchile-logo {
+        width: 6em;
+    }
+
+}
+
+/** this is only for the carousel with multiple images to work */
 
 @media (max-width: 767px) {
     .carousel-inner .carousel-item>div {
         display: none;
     }
+
     .carousel-inner .carousel-item>div:first-child {
         display: block;
     }
@@ -189,44 +205,43 @@ footer {
     display: flex;
 }
 
-@media (min-width: 360px) {
-    .characteristics-text {
-        padding-top: 5%;
-    }
-    .development-logo {
-        margin-left: 30%;
-    }
-    #footer-uandes-logo {
-        width: 10em;
-        margin-right: 2em;
-    }
-    #footer-uchile-logo {
-        width: 4.5em;
-    }
-}
-
-
 /* medium and up screens */
 
 @media (min-width: 768px) {
+
+    header {
+        padding-top: 0.5em;
+    }
+
+    header p {
+        font-size: 1.6em
+    }
+
+
     .carousel-inner .carousel-item-end.active,
     .carousel-inner .carousel-item-next {
         transform: translateX(25%);
     }
+
     .carousel-inner .carousel-item-start.active,
     .carousel-inner .carousel-item-prev {
         transform: translateX(-25%);
     }
+
     .characteristics-text {
         padding-top: 0%;
     }
-    .development-logo {
-        margin-left: 25%;
+
+    img.development-logo {
+        width: 7em;
+        margin: 1em 4em 0em;
     }
+
     #footer-uandes-logo {
         width: 20em;
-        margin-right: 0em;
+        margin-right: 2em;
     }
+
     #footer-uchile-logo {
         width: 9em;
     }
@@ -238,10 +253,116 @@ footer {
 }
 
 @media(min-width:992px) {
+
+    header {
+        padding: 2% 1% 1% 1%;
+    }
+
+    header h1 {
+        margin-top: 0.5em;
+    }
+
+    header p {
+        font-size: 1.3em
+    }
+
     .characteristics-text {
         padding-top: 10%;
     }
-    .development-logo {
-        margin-left: 20%;
+
+    img.development-logo {
+        width: 7em;
+        margin: 1em 0em 0em 3em;
     }
+}
+
+@media(min-width:1200px) {
+    header {
+        padding: 2% 1% 1% 1%;
+    }
+
+    header h1 {
+        margin-top: 1.5em;
+    }
+
+    header p {
+        font-size: 1.5em
+    }
+
+    section.data-section {
+        padding: 2% 1% 1% 1%;
+        border: solid rgba(128, 128, 128, 0.1);
+    }
+
+    div.characteristics-text p {
+        font-size: 1.3em;
+    }
+}
+
+
+@media(min-width:1400px) {
+
+    a.nav-link {
+        font-size: 1.5em;
+    }
+
+    img.ethicapp-logo {
+        width: 9em;
+    }
+
+    header {
+        padding: 2% 1% 1% 1%;
+    }
+
+    header h1 {
+        margin-top: 1.5em;
+    }
+
+    header p {
+        font-size: 1.5em
+    }
+
+    section.data-section {
+        padding: 2% 1% 1% 1%;
+        border: solid rgba(128, 128, 128, 0.1);
+    }
+
+    div.characteristics-text {
+        padding-top: 5%;
+    }
+
+    div.characteristics-text p {
+        font-size: 1.5em;
+    }
+
+    section#research-section h5 {
+        font-size: 2em;
+    }
+
+    section#research-section p {
+        font-size: 1.5em;
+    }
+
+    section#development-section p {
+        font-size: 1.5em;
+    }
+
+    section#development-section h5 {
+        font-size: 2em;
+    }
+
+    img.development-logo {
+        width: 8em;
+        margin: 3em
+    }
+
+    #footer-uandes-logo {
+        width: 30em;
+        margin-right: 2em;
+    }
+
+    #footer-uchile-logo {
+        width: 12em;
+    }
+
 }
