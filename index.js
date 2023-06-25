@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	setUpOrgChart();
 	addEventListener('resize', (event) => {
 		setUpOrgChart();
+		handleTeamCarousel();
 	});
-
+	handleTeamCarousel();
 	controlCarousel();
 });
 
@@ -24,6 +25,18 @@ function controlCarousel() {
 	});
 }
 
+function handleTeamCarousel() {
+	let viewPort = window.innerWidth;
+	if (viewPort < 768) {
+		//* if its mobile
+		document.getElementById('team-else').classList.add('d-none');
+		document.getElementById('team-mobile').classList.remove('d-none');
+	} else {
+		document.getElementById('team-else').classList.remove('d-none');
+		document.getElementById('team-mobile').classList.add('d-none');
+	}
+}
+
 function setUpOrgChart() {
 	const orgData = setOrgChartData();
 	const chartParams = setOrgChartParams();
@@ -38,6 +51,7 @@ function setUpOrgChart() {
 		.nodeWidth((d) => {
 			return chartParams.nodeWidth;
 		})
+		.rootMargin(80)
 		.childrenMargin((d) => chartParams.childrenMargin)
 		.compactMarginBetween((d) => chartParams.compactMarginBetween)
 		.compactMarginPair((d) => chartParams.compactMarginPair)
@@ -51,6 +65,7 @@ function setUpOrgChart() {
 			}</span> ${node.data._directSubordinates}  </div>`;
 		})
 		.linkUpdate(function (d, i, arr) {
+			console.log('link update', d);
 			d3.select(this)
 				.attr('stroke', (d) =>
 					d.data._upToTheRootHighlighted ? '#152785' : '#E4E2E9',
@@ -62,23 +77,7 @@ function setUpOrgChart() {
 			}
 		})
 		.nodeContent((d) => setNodeContent(d))
-		.nodeUpdate(function (d) {
-			// <- normal function
-
-			d3.select(this) // This refers to each node DOM element, including your nodeContent
-				.select('#yourButton') // your node content
-				.on('click', () => {
-					const memberData = d.data;
-					let modalMemberName = document.getElementById('member-name');
-					let modalMemberPicture = document.getElementById('member-picture');
-					let modalMemberRol = document.getElementById('member-rol');
-					let modalMemberInfo = document.getElementById('member-info');
-					modalMemberName.innerText = memberData.name;
-					modalMemberPicture.src = memberData.image;
-					modalMemberRol.innerText = memberData.rol;
-					modalMemberInfo.innerText = memberData.info;
-				});
-		})
+		.nodeUpdate(function (d) {})
 		.setActiveNodeCentered(false)
 		.render();
 	if (chartParams.disablePanning) {
@@ -99,8 +98,8 @@ function setOrgChartData() {
 			id: '0',
 			parentId: '',
 			name: 'Claudio Álvarez',
-			rol: 'BDFL',
-			info: 'Profesor Asociado UANDES',
+			rol: 'Director de Ingeniería y BDFL',
+			info: 'Facultad de Ingeniería y Ciencias Aplicadas Universidad de los Andes Chile',
 			image: './assets/team-pictures/claudio_alvarez.jpg',
 			_expanded: true,
 		},
@@ -109,7 +108,7 @@ function setOrgChartData() {
 			parentId: '0',
 			name: 'Gustavo Zurita',
 			rol: 'Director Científico',
-			info: 'Profesor Titular U.Chile',
+			info: 'Profesor Titular U.Chile Departamento de Control de Gestión y Sistemas de Información Universidad de Chile',
 			image: './assets/team-pictures/gustavo_zurita.jpg',
 			_expanded: true,
 		},
@@ -117,7 +116,7 @@ function setOrgChartData() {
 			id: '2',
 			parentId: '1',
 			name: 'Ignacio Garcés',
-			rol: 'Mantenedor',
+			rol: 'Mantenedor Titular',
 			info: 'Memorista Ing. Civil Computación UANDES',
 			image: './assets/team-pictures/ignacio_garces.jpg',
 			_expanded: true,
@@ -126,7 +125,7 @@ function setOrgChartData() {
 			id: '3',
 			parentId: '2',
 			name: 'Miguel Barraza',
-			rol: 'Mantenedor Trainee',
+			rol: 'Mantenedor',
 			info: 'Memorista Ing. Civil Computación UANDES',
 			image: './assets/team-pictures/miguel_barraza.jpg',
 			_expanded: true,
@@ -135,7 +134,7 @@ function setOrgChartData() {
 			id: '4',
 			name: 'Javier Soto',
 			parentId: '3',
-			rol: 'Desarrollador Front-End',
+			rol: 'Desarrollador Frontend',
 			info: 'Memorista Ing. Civil Computación UANDES',
 			image: './assets/team-pictures/javier_soto.jpg',
 			_expanded: true,
@@ -144,7 +143,7 @@ function setOrgChartData() {
 			id: '5',
 			name: 'Joaquín Gracia',
 			parentId: '3',
-			rol: 'Desarrollador Back-End',
+			rol: 'Desarrollador Backend',
 			info: 'Memorista Ing. Civil Computación UANDES',
 			image: './assets/team-pictures/joaquin_gracia.jpg',
 			_expanded: true,
@@ -153,7 +152,7 @@ function setOrgChartData() {
 			id: '6',
 			name: 'Natalia Espinola',
 			parentId: '3',
-			rol: 'Desarrolladora Back-End',
+			rol: 'Desarrolladora Backend',
 			info: 'Memorista Ing. Civil Computación UANDES',
 			image: './assets/team-pictures/natalia_espinola.jpg',
 			_expanded: true,
@@ -162,7 +161,7 @@ function setOrgChartData() {
 			id: '7',
 			name: 'Matías Rivera',
 			parentId: '3',
-			rol: 'Desarrollador Front-End',
+			rol: 'Desarrollador Frontend',
 			info: 'Memorista Ing. Civil Computación UANDES',
 			image: './assets/team-pictures/matias_rivera.jpg',
 			_expanded: true,
@@ -171,7 +170,7 @@ function setOrgChartData() {
 			id: '9',
 			name: 'Vicente Gana',
 			parentId: '3',
-			rol: 'Desarrollador Back-End',
+			rol: 'Desarrollador Backend',
 			info: 'Memorista Ing. Civil Computación UANDES',
 			image: './assets/team-pictures/vicente_gana.jpg',
 			_expanded: true,
@@ -194,30 +193,45 @@ function setOrgChartParams() {
 		disablePanning: false,
 		compact: false,
 	};
-	if (viewPort > 992) {
+	if (viewPort >= 992) {
 		chartParams = {
-			layout: 'left',
+			layout: 'top',
 			nodeHeight: 85,
 			nodeWidth: 150,
-			childrenMargin: 50,
+			childrenMargin: 100,
 			compactMarginBetween: 25,
 			compactMarginPair: 50,
 			neighbourMargin: 25,
-			siblingsMargin: 25,
-			disablePanning: true,
-			compact: true,
+			siblingsMargin: 150,
+			disablePanning: false,
+			compact: false,
 		};
 	}
-	if (viewPort > 1200) {
+	if (viewPort >= 1200) {
 		chartParams = {
 			layout: 'left',
 			nodeHeight: 70,
 			nodeWidth: 180,
-			childrenMargin: 50,
+			childrenMargin: 30,
 			compactMarginBetween: 25,
-			compactMarginPair: 50,
+			compactMarginPair: 150,
 			neighbourMargin: 25,
-			siblingsMargin: 25,
+			siblingsMargin: 80,
+			disablePanning: true,
+			compact: false,
+		};
+	}
+
+	if (viewPort >= 1400) {
+		chartParams = {
+			layout: 'left',
+			nodeHeight: 70,
+			nodeWidth: 180,
+			childrenMargin: 80,
+			compactMarginBetween: 25,
+			compactMarginPair: 150,
+			neighbourMargin: 25,
+			siblingsMargin: 80,
 			disablePanning: true,
 			compact: false,
 		};
@@ -227,23 +241,13 @@ function setOrgChartParams() {
 }
 
 function setNodeContent(nodeData, index = '', arr = '', state = '') {
-	const color = '#FFFFFF';
 	return `
-            <div id="node-content" style="font-family: 'Inter', sans-serif;background-color:${color}; position:absolute;margin-top:-1px; margin-left:-1px;width:${
-		nodeData.width
-	}px;height:${nodeData.height}px;border-radius:10px;border: 1px solid #E4E2E9">
-               <div style="background-color:${color};position:absolute;margin-top:-25px;margin-left:${15}px;border-radius:100px;width:50px;height:50px;" ></div>
-               <img src=" ${
-									nodeData.data.image
-								}" style="position:absolute;margin-top:-20px;margin-left:${20}px;border-radius:100px;width:40px;height:40px;" />
-								<div style="color:#08011E;position:absolute;right:20px;top:10px;font-size:10px;"><img src="./assets/icons/dots-icon.svg" style="width:1.5em" id='yourButton'  data-bs-toggle="modal" data-bs-target="#exampleModal"></div>
-
-              <div style="font-size:15px;color:#08011E;margin-left:20px;margin-top:32px"> ${
-								nodeData.data.name
-							} </div>
-              <div style="color:#716E7B;margin-left:20px;margin-top:3px;font-size:10px;"> ${
-								nodeData.data.rol
-							} </div>
+            <div id="node-content" class="orgchart-node">
+               <img class="orgchart-img" src=" ${nodeData.data.image}"/>
+					
+              <div style="font-size:15px;color:#08011E;margin-left:20px;margin-top:32px"> ${nodeData.data.name} </div>
+			  <div style="font-size:12px;color:#08011E;margin-left:20px;margin-top:3px"> ${nodeData.data.rol} </div>
+              <div style="color:#716E7B;margin-left:20px;margin-top:3px;font-size:10px;"> ${nodeData.data.info} </div>
            </div>
   `;
 }

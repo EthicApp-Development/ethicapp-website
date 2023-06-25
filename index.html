@@ -62,8 +62,6 @@
         </div>
     </nav>
 
-
-
     <header>
         <div class="container-fluid">
             <div class="row">
@@ -537,17 +535,22 @@
             <div class="container-fluid">
                 <h1 class="text-start fw-bold">Equipo</h1>
                 <hr>
-                <!-- <div id="chart-div" class="d-block w-100"></div> -->
-                <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+                <div class="row" id="team-mobile">
+                    <div class="col">
+                        <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid" id="team-picture"
+                            alt="...">
+                    </div>
+                </div>
+                <div id="team-else" class="carousel carousel-dark slide">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        <button type="button" data-bs-target="#team-else" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#team-else" data-bs-slide-to="1"
                             aria-label="Slide 2"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div id="chart-div" class="d-block w-100" style="padding-left: 10%;"></div>
+                            <div id="chart-div" class="d-block w-100 overflow-auto h-100"></div>
                         </div>
                         <div class="carousel-item">
                             <div class="row">
@@ -559,12 +562,12 @@
 
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    <button class="carousel-control-prev" type="button" data-bs-target="#team-else"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    <button class="carousel-control-next" type="button" data-bs-target="#team-else"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
@@ -576,8 +579,6 @@
 
         <section class="data-section" id="development-section">
             <div class="container-fluid">
-                <!-- <h1 class="text-start fw-bold">Desarrollo</h1>
-                <hr> -->
                 <h1 class="text-center fw-bold">¡Intégrate!</h1>
                 <p class="text-center">Contamos con una organización en Github donde llevamos a delante el desarrollo de
                     EthicApp</p>
@@ -625,7 +626,8 @@
                         </a>
                     </div>
                     <div class="col-md mb-3 mb-md-0">
-                        <a href="#" aria-current="page" target="_blank" class="characteristics-link">
+                        <a href="https://discord.gg/bmD3M2UeTp" aria-current="page" target="_blank"
+                            class="characteristics-link">
                             <div class="card text-light border-light development-card h-100">
                                 <div class="row">
                                     <div class="col-lg">
