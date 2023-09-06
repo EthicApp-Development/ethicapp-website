@@ -97,6 +97,14 @@ function setOrgChartData() {
 		{
 			id: '0',
 			parentId: '',
+			name: 'Equipo EthicApp',
+			rol: '2023-10',
+			info: '',
+			image: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
+		},
+		{
+			id: '1',
+			parentId: '0',
 			name: 'Claudio Álvarez',
 			rol: 'Director de Ingeniería y BDFL',
 			info: 'Facultad de Ingeniería y Ciencias Aplicadas Universidad de los Andes Chile',
@@ -104,7 +112,7 @@ function setOrgChartData() {
 			_expanded: true,
 		},
 		{
-			id: '1',
+			id: '2',
 			parentId: '0',
 			name: 'Gustavo Zurita',
 			rol: 'Director Científico',
@@ -113,7 +121,7 @@ function setOrgChartData() {
 			_expanded: true,
 		},
 		{
-			id: '2',
+			id: '3',
 			parentId: '1',
 			name: 'Ignacio Garcés',
 			rol: 'Mantenedor Titular',
@@ -122,8 +130,8 @@ function setOrgChartData() {
 			_expanded: true,
 		},
 		{
-			id: '3',
-			parentId: '2',
+			id: '4',
+			parentId: '3',
 			name: 'Miguel Barraza',
 			rol: 'Mantenedor',
 			info: 'Memorista Ing. Civil Computación UANDES',
@@ -131,7 +139,7 @@ function setOrgChartData() {
 			_expanded: true,
 		},
 		{
-			id: '4',
+			id: '5',
 			name: 'Javier Soto',
 			parentId: '3',
 			rol: 'Desarrollador Frontend',
@@ -140,7 +148,7 @@ function setOrgChartData() {
 			_expanded: true,
 		},
 		{
-			id: '5',
+			id: '6',
 			name: 'Joaquín Gracia',
 			parentId: '3',
 			rol: 'Desarrollador Backend',
@@ -149,7 +157,7 @@ function setOrgChartData() {
 			_expanded: true,
 		},
 		{
-			id: '6',
+			id: '7',
 			name: 'Natalia Espinola',
 			parentId: '3',
 			rol: 'Desarrolladora Backend',
@@ -158,7 +166,7 @@ function setOrgChartData() {
 			_expanded: true,
 		},
 		{
-			id: '7',
+			id: '8',
 			name: 'Matías Rivera',
 			parentId: '3',
 			rol: 'Desarrollador Frontend',
@@ -191,7 +199,7 @@ function setOrgChartParams() {
 		neighbourMargin: 25,
 		siblingsMargin: 25,
 		disablePanning: false,
-		compact: false,
+		compact: true,
 	};
 	if (viewPort >= 992) {
 		chartParams = {
@@ -204,12 +212,12 @@ function setOrgChartParams() {
 			neighbourMargin: 25,
 			siblingsMargin: 150,
 			disablePanning: false,
-			compact: false,
+			compact: true,
 		};
 	}
 	if (viewPort >= 1200) {
 		chartParams = {
-			layout: 'left',
+			layout: 'top',
 			nodeHeight: 70,
 			nodeWidth: 180,
 			childrenMargin: 30,
@@ -217,23 +225,23 @@ function setOrgChartParams() {
 			compactMarginPair: 150,
 			neighbourMargin: 25,
 			siblingsMargin: 80,
-			disablePanning: true,
-			compact: false,
+			disablePanning: false,
+			compact: true,
 		};
 	}
 
 	if (viewPort >= 1400) {
 		chartParams = {
-			layout: 'left',
+			layout: 'top',
 			nodeHeight: 70,
 			nodeWidth: 180,
-			childrenMargin: 80,
-			compactMarginBetween: 25,
+			childrenMargin: 140,
+			compactMarginBetween: 150,
 			compactMarginPair: 150,
 			neighbourMargin: 25,
-			siblingsMargin: 80,
-			disablePanning: true,
-			compact: false,
+			siblingsMargin: 200,
+			disablePanning: false,
+			compact: true,
 		};
 	}
 
