@@ -167,6 +167,16 @@ div.orgchart-node {
     border: 1px solid #E4E2E9;
 }
 
+div.orgchart-node a, a:hover, a:visited, a:active {
+    color: #000;
+    text-decoration: none;
+}
+
+div.orgchart-node a:hover, a:active {
+    color: #000;
+    text-decoration: underline;
+}
+
 img.orgchart-img {
     position: absolute;
     margin-top: -50px;
@@ -196,9 +206,11 @@ img.orgchart-img {
     }
 
     div.orgchart-node {
-        width: 200px;
-        height: 85px;
-    }
+        width: 240px;
+        height: 120px;
+        margin-top: -25px;
+        margin-left: -60px;
+    }   
 
     img.development-logo {
         width: 7em;
@@ -347,15 +359,7 @@ img.orgchart-img {
         padding-left: 7em;
         padding-right: 7em;
     }
-
-    div.orgchart-node {
-        width: 180px;
-        height: 120px;
-        margin-top: -25px;
-        margin-left: -1px;
-    }
 }
-
 
 @media(min-width:1400px) {
 
@@ -400,13 +404,6 @@ img.orgchart-img {
         font-size: 1.5em;
     }
 
-    div.orgchart-node {
-        width: 240px;
-        height: 120px;
-        margin-top: -25px;
-        margin-left: -60px;
-    }
-
     img#team-picture {
         padding-left: 9em;
         padding-right: 9em;
@@ -434,4 +431,12 @@ img.orgchart-img {
         width: 12em;
     }
 
+}
+
+g.node-button-g {
+    display: none;
+}
+
+div.carousel-indicators button {
+    display: none;
 }

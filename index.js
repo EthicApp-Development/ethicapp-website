@@ -93,7 +93,7 @@ function setUpOrgChart() {
 }
 
 function setOrgChartData() {
-	const orgData = [
+	const orgData = [	
 		{
 			id: '0',
 			parentId: '',
@@ -105,18 +105,18 @@ function setOrgChartData() {
 		{
 			id: '1',
 			parentId: '0',
-			name: 'Claudio Álvarez',
+			name: '<a href="https://www.linkedin.com/in/claudioalvarezgomez/" target="_blank">Claudio Álvarez</a>',
 			rol: 'Director de Ingeniería y BDFL',
-			info: 'Facultad de Ingeniería y Ciencias Aplicadas Universidad de los Andes Chile',
+			info: 'Prof. Asociado, Fac. Ingeniería<br>Universidad de los Andes, Chile<br>calvarez (at) uandes.cl',
 			image: './assets/team-pictures/claudio_alvarez.jpg',
 			_expanded: true,
 		},
 		{
 			id: '2',
 			parentId: '0',
-			name: 'Gustavo Zurita',
+			name: '<a href="https://cl.linkedin.com/in/gustavo-zurita-bb5a5244" target="_blank">Gustavo Zurita</a>',
 			rol: 'Director Científico',
-			info: 'Profesor Titular U.Chile Departamento de Control de Gestión y Sistemas de Información Universidad de Chile',
+			info: 'Profesor Titular, <a href="http://dcs.uchile.cl" target=_blank>DCS</a><br>Universidad de Chile<br>gzurita (at) fen.uchile.cl',
 			image: './assets/team-pictures/gustavo_zurita.jpg',
 			_expanded: true,
 		},
@@ -189,7 +189,7 @@ function setOrgChartData() {
 
 function setOrgChartParams() {
 	let viewPort = window.innerWidth;
-	let chartParams = {
+	/*let chartParams = {
 		layout: 'top',
 		nodeHeight: 85,
 		nodeWidth: 200,
@@ -200,37 +200,22 @@ function setOrgChartParams() {
 		siblingsMargin: 25,
 		disablePanning: false,
 		compact: true,
-	};
-	if (viewPort >= 992) {
-		chartParams = {
-			layout: 'top',
-			nodeHeight: 85,
-			nodeWidth: 150,
-			childrenMargin: 100,
-			compactMarginBetween: 25,
-			compactMarginPair: 50,
-			neighbourMargin: 25,
-			siblingsMargin: 150,
-			disablePanning: false,
-			compact: true,
-		};
-	}
-	if (viewPort >= 1200) {
-		chartParams = {
-			layout: 'top',
-			nodeHeight: 70,
-			nodeWidth: 180,
-			childrenMargin: 30,
-			compactMarginBetween: 25,
-			compactMarginPair: 150,
-			neighbourMargin: 25,
-			siblingsMargin: 80,
-			disablePanning: false,
-			compact: true,
-		};
-	}
+	};*/
 
-	if (viewPort >= 1400) {
+	let chartParams = {
+		layout: 'top',
+		nodeHeight: 100,
+		nodeWidth: 220,
+		childrenMargin: 100,
+		compactMarginBetween: 80,
+		compactMarginPair: 50,
+		neighbourMargin: 100,
+		siblingsMargin: 140,
+		disablePanning: false,
+		compact: true,
+	};	
+
+	if (viewPort >= 1200) {
 		chartParams = {
 			layout: 'top',
 			nodeHeight: 70,
@@ -243,7 +228,7 @@ function setOrgChartParams() {
 			disablePanning: false,
 			compact: true,
 		};
-	}
+	}	
 
 	return chartParams;
 }
