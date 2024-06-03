@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-
     var translations = {
         en: {
-            nav: ["Features", "Experiences", "Testimonials", "Documentation", "Research", "Team", "Development"],
+            nav: ["Features", "Experiences", "Testimonials", "Documentation", "Research", "Team", "Development", "Language"],
             header: {
                 title: "Improve the ethical training of future professionals in various fields of knowledge",
-                description: "EthicApp: Social platform for the analysis and discussion of cases in academic, professional, and scientific ethics."
+                description: "EthicApp: Social platform for the analysis and discussion of cases in academic, professional, and scientific ethics.",
+                img: "HomeEn.jpg"
             },
             characteristics: {
                 title: "Features",
@@ -16,14 +16,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 teachingResearch: "Designed for teaching and research"
             },
             details: {
+                easy2useImg: "DisenoEn.jpg",
                 easy2useTitle: "Easy and Quick to Use",
                 easy2useDescription: "Pre-designed ethics cases and activities available for use; usable from phones and laptops, from the classroom and home.",
+                teacherSupportImg: "ActividadTerminadaEn.jpg",
                 teacherSupportTitle: "Teacher Support",
                 teacherSupportDescription: "Displays student responses and real-time statistics to the teacher, allowing for better feedback and personalized student tracking.",
+                sessionImg: "CracionActividadEn.jpg",
                 sessionsTitle: "Highly Participative Case Sessions",
                 sessionsDescription: "All students participate, with equal opportunities, and either anonymously or identified as required.",
+                centurySkillsImg: "ActividadEn.jpg",
                 centurySkillsTitle: "Focused on Developing 21st Century Skills",
                 centurySkillsDescription: "Ethics case analysis activities that stimulate critical thinking, the development and exchange of arguments and ideas, respectful observation and analysis of different points of view, written communication, and collaborative work.",
+                teachingResearchImg: "ListaActividadesEn.jpg",
                 teachingResearchTitle: "Designed for Teaching and Research",
                 teachingResearchDescription: "Designed to be used by ethics teachers as well as teachers from other disciplines. Data collected by EthicApp can be exported for research with student consent and in compliance with current data protection legislation."
             },
@@ -49,10 +54,11 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         },
         es: {
-            nav: ["Características", "Experiencias", "Testimonios", "Documentación", "Investigación", "Equipo", "Desarrollo"],
+            nav: ["Características", "Experiencias", "Testimonios", "Documentación", "Investigación", "Equipo", "Desarrollo", "Idioma"],
             header: {
                 title: "Mejora la formación ética de los futuros profesionales en distintas áreas del conocimiento",
-                description: "EthicApp: Plataforma social para el análisis y discusión de casos en ética académica, profesional y científica."
+                description: "EthicApp: Plataforma social para el análisis y discusión de casos en ética académica, profesional y científica.",
+                img: "HomeEs.jpg"
             },
             characteristics: {
                 title: "Características",
@@ -63,14 +69,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 teachingResearch: "Pensada para la docencia e investigación"
             },
             details: {
+                easy2useImg: "DisenoEs.jpg",
                 easy2useTitle: "De fácil y rápido uso",
                 easy2useDescription: "Casos de ética y actividades prediseñadas disponibles para el uso; Utilizable desde teléfonos y computadores portátiles, desde la sala de clases y la casa.",
+                teacherSupportImg: "ActividadTerminadaEs.jpg",
                 teacherSupportTitle: "Un apoyo al profesor",
                 teacherSupportDescription: "Presenta respuestas de los estudiantes y estadísticas en tiempo real al profesor, permitiéndole elaborar una mejor retroalimentación, y un seguimiento personalizado a los estudiantes.",
+                sessionImg: "CracionActividadEs.jpg",
                 sessionsTitle: "Sesiones de casos altamente participativas",
                 sessionsDescription: "Todos los estudiantes participan, con igualdad de oportunidades, y en forma anónima o identificada según se requiera.",
+                centurySkillsImg: "ActividadEs.jpg",
                 centurySkillsTitle: "Enfocada en el desarrollo habilidades del siglo 21",
                 centurySkillsDescription: "Actividades de análisis de casos de ética que estimulan el pensamiento crítico, la elaboración e intercambio de argumentos e ideas, la observación y análisis respetuoso de distintos puntos de vista, la comunicación escrita y trabajo colaborativo.",
+                teachingResearchImg: "ListaActividadesEs.jpg",
                 teachingResearchTitle: "Pensada para la docencia y la investigación",
                 teachingResearchDescription: "Diseñada para ser utilizada tanto por profesores de ética, como por profesores de otras disciplinas. Los datos recopilados por EthicApp pueden ser exportados para investigación bajo el consentimiento de los estudiantes, y respetando la legislación vigente en materia de protección de datos personales."
             },
@@ -99,14 +110,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Inicializa Polyglot con el idioma predeterminado
     var polyglot = new Polyglot({
-        phrases: translations.en,
-        locale: 'en'
+        phrases: translations.es,
+        locale: 'es'
     });
 
     function updateTranslations() {
         document.querySelectorAll('[data-i18n]').forEach(function(element) {
             var key = element.getAttribute('data-i18n');
             element.textContent = polyglot.t(key);
+        });
+
+        // Actualiza todas las imágenes
+        document.querySelectorAll('[data-i18n-img]').forEach(function(imgElement) {
+            var imgKey = imgElement.getAttribute('data-i18n-img');
+            imgElement.src = "./assets/" + polyglot.t(imgKey);
         });
     }
 
