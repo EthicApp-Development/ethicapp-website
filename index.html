@@ -6,18 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="revisit-after" content="1 month">
     <meta name="rating" content="general">
-    <meta name="description" content="EthicApp es una plataforma de autoría y ejecución de diseño instruccional
-    para la educación ética en instituciones de educación superior. Es software de código abierto con licencia MIT.">
+    <meta name="description" content="EthicApp es una plataforma de autoría y ejecución de diseño instruccional para la educación ética en instituciones de educación superior. Es software de código abierto con licencia MIT.">
     <title>EthicApp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-org-chart@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-flextree@2.1.2/build/d3-flextree.js"></script>
@@ -31,10 +25,18 @@
 
     gtag('config', 'G-MWRQ6RCNSP');
     </script>
+
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+    <!-- Traduccion -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/polyglot.js/2.2.2/polyglot.min.js" integrity="sha512-dGbVa0XX8dFXCjPsvhYMn1BcgR67hiJsnzClNrc5PoIu7Gp9ZrRaV2dYW2fXcuPAI4xTSK000x9kNmIV1w+Z9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="translation.js"></script>
 </head>
 <body>
     <nav id="app-navbar" class="navbar navbar-expand-lg sticky-top">
@@ -42,73 +44,83 @@
             <a class="navbar-brand" href="#">
                 <img src="./assets/EthicApp-logo.png" alt="ethicapp-logo" class="ethicapp-logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
-                aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar-toggler">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#characteristics-section">Características</a>
+                        <a class="nav-link" href="#characteristics-section" data-i18n="nav.0">Características</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience-section">Experiencias</a>
+                        <a class="nav-link" href="#experience-section" data-i18n="nav.1">Experiencias</a>
                     </li>
                     <li class="nav-item d-none">
-                        <a class="nav-link" href="#testimonials-section">Testimonios</a>
+                        <a class="nav-link" href="#testimonials-section" data-i18n="nav.2">Testimonios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" target="_blank"
-                            href="https://github.com/EthicApp-Development/organization">Documentación</a>
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://github.com/EthicApp-Development/organization" data-i18n="nav.3">Documentación</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#research-section">Investigación</a>
+                        <a class="nav-link" href="#research-section" data-i18n="nav.4">Investigación</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#team-section">Equipo</a>
+                        <a class="nav-link" href="#team-section" data-i18n="nav.5">Equipo</a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://www.github.com/EthicApp-Development" target="_blank" class="nav-link">Desarrollo</a>
+                        <a href="https://www.github.com/EthicApp-Development" target="_blank" class="nav-link" data-i18n="nav.6">Desarrollo</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe">
+                                <span class="language-selector" data-i18n="nav.7" >Idioma</span>
+                            </i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+                        </ul>
+                    </li>
+                </ul>                
             </div>
         </div>
     </nav>
+
     <header>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg">
-                    <h1 class="text-start fw-bold">
+                    <h1 class="text-start fw-bold" id="header-title" data-i18n="header.title">
                         Mejora la formación ética de los futuros profesionales en distintas áreas del conocimiento
                     </h1>
                     <br>
-                    <p>
-                        EthicApp: Plataforma social para el análisis y discusión de casos en ética académica,
-                        profesional y científica.
+                    <p id="header-description" data-i18n="header.description">
+                        EthicApp: Plataforma social para el análisis y discusión de casos en ética académica, profesional y científica.
                     </p>
                 </div>
                 <div class="col-lg">
                     <div id="image-inner-border">
-                        <img src="./assets/20230905-teacher-001.jpg" alt="home-page-img" id="home-page-img" class="img-fluid">
+                        <img src="./assets/HomeEs.jpg" alt="home-page-img" id="home-page-img" class="img-fluid" data-i18n-img="header.img">
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    
 
     <div data-bs-spy="scroll" data-bs-target="#app-navbar">
         <section class="data-section" id="characteristics-section">
             <div class="container-fluid">
-
-                <h1 class="text-start fw-bold">Características</h1>
+                <h1 class="text-start fw-bold" id="features-title" data-i18n="characteristics.title">Características</h1>
                 <hr>
-
                 <div class="row">
                     <div class="col characteristics-col">
                         <a href="#easy-to-use" class="characteristics-link">
                             <div class="text-center">
                                 <img src="./assets/icons/check-all-icon.svg" class="card-img-top" alt="...">
-                                <h5 class="card-title">Fácil de usar</h5>
+                                <h5 class="card-title" id="features-easy2use" data-i18n="characteristics.easy2use">Fácil de usar</h5>
                             </div>
                         </a>
                     </div>
@@ -116,7 +128,7 @@
                         <a href="#teacher-support" class="characteristics-link">
                             <div class="text-center">
                                 <img src="./assets/icons/teacher-icon.svg" class="card-img-top" alt="...">
-                                <h5 class="card-title">Un apoyo al profesor</h5>
+                                <h5 class="card-title" id="features-teacher-support" data-i18n="characteristics.teacherSupport">Un apoyo al profesor</h5>
                             </div>
                         </a>
                     </div>
@@ -124,7 +136,7 @@
                         <a href="#class-participation" class="characteristics-link">
                             <div class="text-center">
                                 <img src="./assets/icons/participation-icon.svg" class="card-img-top" alt="...">
-                                <h5 class="card-title">Sesiones de casos altamente participativas</h5>
+                                <h5 class="card-title" id="features-sessions" data-i18n="characteristics.sessions">Sesiones de casos altamente participativas</h5>
                             </div>
                         </a>
                     </div>
@@ -132,7 +144,7 @@
                         <a href="#21century-skills" class="characteristics-link">
                             <div class="text-center">
                                 <img src="./assets/icons/21skills-icon.svg" class="card-img-top" alt="...">
-                                <h5 class="card-title">Enfocada en habilidades del siglo 21</h5>
+                                <h5 class="card-title" id="features-21st-century" data-i18n="characteristics.centurySkills">Enfocada en habilidades del siglo 21</h5>
                             </div>
                         </a>
                     </div>
@@ -140,30 +152,28 @@
                         <a href="#teaching-research" class="characteristics-link">
                             <div class="text-center">
                                 <img src="./assets/icons/research_icon.svg" class="card-img-top" alt="...">
-                                <h5 class="card-title">Pensada para la docencia e investigación</h5>
+                                <h5 class="card-title" id="features-teaching-research" data-i18n="characteristics.teachingResearch">Pensada para la docencia e investigación</h5>
                             </div>
                         </a>
                     </div>
                 </div>
-
             </div>
-        </section>
+        </section>       
 
         <section id="characteristics-detail-section">
             <div class="container-fluid">
-
                 <article class="characteristics-row" id="easy-to-use">
                     <div class="row even-row py-3">
                         <div class="col-md order-md-1">
-                            <img src="./assets/20230905-teacher-003.jpg" alt="home-page-img"
-                                class="shadow characteristics-img img-fluid">
+                            <img src="./assets/DisenoEs.jpg" data-i18n-img="details.easy2useImg" 
+                            alt="home-page-img" class="shadow characteristics-img img-fluid" >
                         </div>
                         <div class="col-md order-md-2">
                             <div class="characteristics-text">
-                                <h1 class="text-start fw-bold">
+                                <h1 class="text-start fw-bold" id="easy2use-title" data-i18n="details.easy2useTitle">
                                     De fácil y rápido uso
                                 </h1>
-                                <p class="text-start">
+                                <p class="text-start" id="easy2use-description" data-i18n="details.easy2useDescription">
                                     Casos de ética y actividades prediseñadas disponibles para el uso; Utilizable desde
                                     teléfonos y computadores portátiles, desde la sala de clases y la casa
                                 </p>
@@ -175,15 +185,15 @@
                 <article class="characteristics-row" id="teacher-support">
                     <div class="row odd-row py-3">
                         <div class="col-md order-md-2">
-                            <img src="./assets/20230905-teacher-001.jpg" alt="home-page-img"
+                            <img src="./assets/ActividadTerminadaEs.jpg" data-i18n-img="details.teacherSupportImg" alt="home-page-img"
                                 class="shadow characteristics-img img-fluid">
                         </div>
                         <div class="col-md order-md-1">
                             <div class="characteristics-text">
-                                <h1 class="text-start fw-bold">
+                                <h1 class="text-start fw-bold" id="teacher-support-title" data-i18n="details.teacherSupportTitle">
                                     Un apoyo al profesor
                                 </h1>
-                                <p class="text-start">
+                                <p class="text-start" id="teacher-support-description" data-i18n="details.teacherSupportDescription">
                                     Presenta respuestas de los estudiantes y estadísticas en tiempo real al profesor,
                                     permitiéndole elaborar una mejor retroalimentación, y un seguimiento personalizado a
                                     los estudiantes.
@@ -196,15 +206,15 @@
                 <article class="characteristics-row" id="class-participation">
                     <div class="row even-row py-3">
                         <div class="col-md order-md-1">
-                            <img src="./assets/20230905-teacher-002.jpg" alt="home-page-img"
+                            <img src="./assets/CracionActividadEs.jpg" data-i18n-img="details.sessionImg" alt="home-page-img"
                                 class="shadow characteristics-img img-fluid">
                         </div>
                         <div class="col-md order-md-2">
                             <div class="characteristics-text">
-                                <h1 class="text-start fw-bold">
+                                <h1 class="text-start fw-bold" id="sessions-title" data-i18n="details.sessionsTitle">
                                     Sesiones de casos altamente participativas
                                 </h1>
-                                <p class="text-start">
+                                <p class="text-start" id="sessions-description" data-i18n="details.sessionsDescription">
                                     Todos los estudiantes participan, con igualdad de oportunidades, y en forma anónima
                                     o identificada según se requiera.
                                 </p>
@@ -216,15 +226,15 @@
                 <article class="characteristics-row" id="21century-skills">
                     <div class="row odd-row py-3">
                         <div class="col-md order-md-2">
-                            <img src="./assets/20230905-teacher-004.jpg" alt="home-page-img"
+                            <img src="./assets/ActividadEs.jpg" data-i18n-img="details.centurySkillsImg" alt="home-page-img"
                                 class="shadow characteristics-img img-fluid">
                         </div>
                         <div class="col-md order-md-1">
                             <div class="characteristics-text">
-                                <h1 class="text-start fw-bold">
+                                <h1 class="text-start fw-bold" id="21st-century-title" data-i18n="details.centurySkillsTitle">
                                     Enfocada en el desarrollo habilidades del siglo 21
                                 </h1>
-                                <p class="text-start">
+                                <p class="text-start" id="21st-century-description" data-i18n="details.centurySkillsDescription">
                                     Actividades de análisis de casos de ética que estimulan el pensamiento crítico, la
                                     elaboración e intercambio de argumentos e ideas, la observación y análisis
                                     respetuoso de distintos puntos de vista, la comunicación escrita y trabajo
@@ -238,33 +248,31 @@
                 <article class="characteristics-row" id="teaching-research">
                     <div class="row even-row py-3">
                         <div class="col-md order-md-1">
-                            <img src="./assets/20230905-teacher-003.jpg" alt="home-page-img"
+                            <img src="./assets/ListaActividadesEs.jpg" data-i18n-img="details.teachingResearchImg" alt="home-page-img"
                                 class="shadow characteristics-img img-fluid">
                         </div>
                         <div class="col-md order-md-2">
                             <div class="characteristics-text">
-                                <h1 class="text-start fw-bold">
+                                <h1 class="text-start fw-bold" id="teaching-research-title" data-i18n="details.teachingResearchTitle">
                                     Pensada para la docencia y la investigación
                                 </h1>
-                                <p class="text-start">
+                                <p class="text-start" id="teaching-research-description" data-i18n="details.teachingResearchDescription">
                                     Diseñada para ser utilizada tanto por profesores de ética, como por profesores de
                                     otras disciplinas. Los datos recopilados por EthicApp pueden ser exportados para
                                     investigación bajo el consentimiento de los etudiantes, y respetando la legislación
-                                    vigente
-                                    en materia de protección de datos personales.
+                                    vigente en materia de protección de datos personales.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </article>
-
             </div>
         </section>
 
         <section class="data-section" id="experience-section">
             <div class="container-fluid">
 
-                <h1 class="text-start fw-bold">Experiencias</h1>
+                <h1 class="text-start fw-bold" id="experiences-title" data-i18n="experiences.title">Experiencias</h1>
                 <hr>
 
                 <div class="row">
@@ -435,9 +443,9 @@
         -->
         <section class="data-section" id="research-section">
             <div class="container-fluid">
-                <h1 class="text-start fw-bold">Investigaciones</h1>
+                <h1 class="text-start fw-bold" id="investigations-title" data-i18n="investigations.title">Investigaciones</h1>
                 <hr>
-                <p>Las siguiente lista cronológica de publicaciones presenta estudios que se relacionan tanto con el uso
+                <p id="investigations-description" data-i18n="investigations.description" >Las siguiente lista cronológica de publicaciones presenta estudios que se relacionan tanto con el uso
                     de EthicApp en aula como con aspectos técnicos relativos a su desarrollo:</p>
                 <ul class="list-group">
                     <a href="https://doi.org/10.1007/978-3-031-42141-9_2"
@@ -560,7 +568,7 @@
 
         <section class="data-section" id="team-section">
             <div class="container-fluid">
-                <h1 class="text-start fw-bold">Equipo</h1>
+                <h1 class="text-start fw-bold" id="team-title" data-i18n="team.title">Equipo</h1>
                 <hr>
                 <div class="row" id="team-mobile">
                     <div class="col">
@@ -606,8 +614,8 @@
 
         <section class="data-section" id="development-section">
             <div class="container-fluid">
-                <h1 class="text-center fw-bold">¡Intégrate!</h1>
-                <p class="text-center">Contamos con una organización en Github donde llevamos a delante el desarrollo de
+                <h1 class="text-center fw-bold" id="development-section-title" data-i18n="development.title">¡Intégrate!</h1>
+                <p class="text-center" id="development-section-description" data-i18n="development.description">Contamos con una organización en Github donde llevamos a delante el desarrollo de
                     EthicApp</p>
                 <div class="row">
                     <div class="col-md mb-3 mb-md-0">
@@ -621,8 +629,8 @@
                                     </div>
                                     <div class="col-lg">
                                         <div class="card-body">
-                                            <h5 class="card-title text-center text-lg-start">Visítanos en Github</h5>
-                                            <p class="card-text text-center text-lg-start">Trabaja en el desarrollo de
+                                            <h5 class="card-title text-center text-lg-start" id="development-github-title" data-i18n="development.githubTitle">Visítanos en Github</h5>
+                                            <p class="card-text text-center text-lg-start" id="development-github-description" data-i18n="development.githubDescription">Trabaja en el desarrollo de
                                                 EthicApp
                                             </p>
                                         </div>
@@ -642,9 +650,9 @@
                                     </div>
                                     <div class="col-lg">
                                         <div class="card-body">
-                                            <h5 class="card-title text-center text-lg-start">Software de código abierto
+                                            <h5 class="card-title text-center text-lg-start" id="development-mit-title" data-i18n="development.mitTitle">Software de código abierto
                                             </h5>
-                                            <p class="card-text text-center text-lg-start">Distribuido bajo licencia del
+                                            <p class="card-text text-center text-lg-start" id="development-mit-description" data-i18n="development.mitDescription">Distribuido bajo licencia del
                                                 MIT</p>
                                         </div>
                                     </div>
@@ -663,8 +671,8 @@
                                     </div>
                                     <div class="col-lg">
                                         <div class="card-body">
-                                            <h5 class="card-title text-center text-lg-start">Únete a la discusión</h5>
-                                            <p class="card-text text-center text-lg-start">Contamos con un servidor en
+                                            <h5 class="card-title text-center text-lg-start" id="development-discord-title" data-i18n="development.discordTitle">Únete a la discusión</h5>
+                                            <p class="card-text text-center text-lg-start" id="development-discord-description" data-i18n="development.discordDescription">Contamos con un servidor en
                                                 Discord</p>
                                         </div>
                                     </div>

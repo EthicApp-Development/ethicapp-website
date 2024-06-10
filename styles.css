@@ -27,6 +27,12 @@ header {
     color: white;
 }
 
+.language-selector {
+    font-family: 'Avenir', 'Helvetica', 'sans-serif';
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
 #home-page-img {
     border-radius: 3px;
     border: 0.1em solid #DBDFEA;
