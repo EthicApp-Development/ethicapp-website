@@ -569,19 +569,24 @@
         <section class="data-section" id="team-section">
             <div class="container-fluid">
                 <h1 class="text-start fw-bold" id="team-title" data-i18n="team.title">Equipo</h1>
-                <hr>
-                <div class="row" id="team-mobile">
+            
+                <ul class="nav nav-tabs" id="teamTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="team-2023-tab" data-bs-toggle="tab" data-bs-target="#team-2023" type="button" role="tab" aria-controls="team-2023" aria-selected="true">2023</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="team-2024-tab" data-bs-toggle="tab" data-bs-target="#team-2024" type="button" role="tab" aria-controls="team-2024" aria-selected="false">2024</button>
+                    </li>
+                </ul>
+                <div class="row d-none" id="team-mobile">
                     <div class="col">
-                        <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid" id="team-picture"
-                            alt="...">
+                        <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid"  id="team-carousel-picture" alt="...">
                     </div>
                 </div>
                 <div id="team-else" class="carousel carousel-dark slide">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#team-else" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#team-else" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#team-else" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#team-else" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -590,28 +595,23 @@
                         <div class="carousel-item">
                             <div class="row">
                                 <div class="col">
-                                    <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid"
-                                        id="team-picture" alt="...">
+                                    <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid" id="team-picture" alt="...">
                                 </div>
                             </div>
-
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#team-else"
-                        data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#team-else" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#team-else"
-                        data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#team-else" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
             </div>
         </section>
-
+        
         <section class="data-section" id="development-section">
             <div class="container-fluid">
                 <h1 class="text-center fw-bold" id="development-section-title" data-i18n="development.title">¡Intégrate!</h1>
