@@ -331,7 +331,7 @@ function setNodeContent(nodeData, index = '', arr = '', state = '') {
 function updateTeamImage(year) {
     const images = {
         '2023': './assets/team-pictures/team_2023.jpg',
-        '2024': './assets/team-pictures/team_2024.jpg'
+        '2024': './assets/team-pictures/team_2023.jpg'
     };
     document.querySelector('#team-mobile img').src = images[year];
     document.querySelector('#team-picture').src = images[year];
