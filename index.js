@@ -211,7 +211,7 @@ function setOrgChartData(year) {
                 parentId: '3',
                 rol: 'Desarrollador Backend',
                 info: 'Memorista Ing. Civil Computación UANDES',
-                image: '',
+                image: './assets/team-pictures/benjamin_gonzalez.jpg',
                 _expanded: true,
             },
             {
@@ -220,7 +220,7 @@ function setOrgChartData(year) {
                 parentId: '3',
                 rol: 'Desarrollador Fullstack',
                 info: 'Memorista Ing. Civil Computación UANDES',
-                image: '',
+                image: './assets/team-pictures/sebastian_diaz.jpg',
                 _expanded: true,
             },
             {
@@ -229,7 +229,7 @@ function setOrgChartData(year) {
                 parentId: '3',
                 rol: 'Desarrollador Backend',
                 info: 'Memorista Ing. Civil Computación UANDES',
-                image: '',
+                image: './assets/team-pictures/sin_foto.jpg',
                 _expanded: true,
             },
         ],
@@ -267,7 +267,7 @@ function setOrgChartData(year) {
                 name: '<a href="https://github.com/nicolasgebauer" target="_blank">Nicolás Gebauer</a>',
                 rol: 'Mantenedor',
                 info: 'Memorista Ing. Civil Computación UANDES',
-                image: '',
+                image: './assets/team-pictures/sin_foto.jpg',
                 _expanded: true,
             },
             {
@@ -276,7 +276,7 @@ function setOrgChartData(year) {
                 parentId: '3',
                 rol: 'Desarrollador Fullstack',
                 info: 'Memorista Ing. Civil Computación UANDES',
-                image: '',
+                image: './assets/team-pictures/sin_foto.jpg',
                 _expanded: true,
             },
             {
@@ -285,7 +285,7 @@ function setOrgChartData(year) {
                 parentId: '3',
                 rol: 'Desarrollador Backend',
                 info: 'Memorista Ing. Civil Computación UANDES',
-                image: '',
+                image: './assets/team-pictures/benjamin_gonzalez.jpg',
                 _expanded: true,
             },
             {
@@ -294,7 +294,7 @@ function setOrgChartData(year) {
                 parentId: '3',
                 rol: 'Desarrollador Fullstack',
                 info: 'Memorista Ing. Civil Computación UANDES',
-                image: '',
+                image: './assets/team-pictures/sebastian_diaz.jpg',
                 _expanded: true,
             },
             {
@@ -303,7 +303,7 @@ function setOrgChartData(year) {
                 parentId: '3',
                 rol: 'Desarrolladora Frontend',
                 info: 'Memorista Ing. Civil Computación UANDES',
-                image: '',
+                image: './assets/team-pictures/sin_foto.jpg',
                 _expanded: true,
             },
         ]
