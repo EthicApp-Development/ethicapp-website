@@ -27,6 +27,12 @@ header {
     color: white;
 }
 
+.language-selector {
+    font-family: 'Avenir', 'Helvetica', 'sans-serif';
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
 #home-page-img {
     border-radius: 3px;
     border: 0.1em solid #DBDFEA;
@@ -439,4 +445,18 @@ g.node-button-g {
 
 div.carousel-indicators button {
     display: none;
+}
+
+#chart-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+#chart-div svg {
+    width: 100%;
+    height: auto;
 }
