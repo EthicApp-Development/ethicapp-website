@@ -5,7 +5,10 @@ const { locale, nav } = Astro.props;
 ---
 <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
   <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-    <img src="/assets/EthicApp-logo.png" class="ethicapp-logo">
+    <a href={`/${locale}/`} class="topnav-brand text-lg text-indigo-700">
+      <img src="/assets/ethicapp-logo.png" alt="EthicApp logo" class="brand-logo" />
+      <span class="brand-title">EthicApp</span>
+    </a>
     <ul class="flex flex-wrap gap-4 text-sm font-medium text-slate-700">
       <li><a href={`/${locale}/#inicio`}>{nav[0]}</a></li>
       <li><a href={`/${locale}/#caracteristicas`}>{nav[1]}</a></li>
