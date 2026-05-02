@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
             header: {
                 title: "Improve the ethical training of future professionals in various fields of knowledge",
                 description: "EthicApp: Social platform for the analysis and discussion of cases in academic, professional, and scientific ethics.",
-                img: "HomeEn.jpg"
+                img: "screenshots/design-view.jpg"
             },
             characteristics: {
                 title: "Features",
@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 teachingResearch: "Designed for teaching and research"
             },
             details: {
-                easy2useImg: "DisenoEn.jpg",
+                easy2useImg: "screenshots/workbench.jpg",
                 easy2useTitle: "Easy and Quick to Use",
                 easy2useDescription: "Pre-designed ethics cases and activities available for use; usable from phones and laptops, from the classroom and home.",
-                teacherSupportImg: "ActividadTerminadaEn.jpg",
+                teacherSupportImg: "screenshots/dashboard.jpg",
                 teacherSupportTitle: "Teacher Support",
                 teacherSupportDescription: "Displays student responses and real-time statistics to the teacher, allowing for better feedback and personalized student tracking.",
-                sessionImg: "CracionActividadEn.jpg",
+                sessionImg: "screenshots/designs.jpg",
                 sessionsTitle: "Highly Participative Case Sessions",
                 sessionsDescription: "All students participate, with equal opportunities, and either anonymously or identified as required.",
-                centurySkillsImg: "ActividadEn.jpg",
+                centurySkillsImg: "screenshots/student-chat.jpg",
                 centurySkillsTitle: "Focused on Developing 21st Century Skills",
                 centurySkillsDescription: "Ethics case analysis activities that stimulate critical thinking, the development and exchange of arguments and ideas, respectful observation and analysis of different points of view, written communication, and collaborative work.",
-                teachingResearchImg: "ListaActividadesEn.jpg",
+                teachingResearchImg: "screenshots/student-response.jpg",
                 teachingResearchTitle: "Designed for Teaching and Research",
                 teachingResearchDescription: "Designed to be used by ethics teachers as well as teachers from other disciplines. Data collected by EthicApp can be exported for research with student consent and in compliance with current data protection legislation."
             },
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
             header: {
                 title: "Mejora la formación ética de los futuros profesionales en distintas áreas del conocimiento",
                 description: "EthicApp: Plataforma social para el análisis y discusión de casos en ética académica, profesional y científica.",
-                img: "HomeEs.jpg"
+                img: "screenshots/design-view.jpg"
             },
             characteristics: {
                 title: "Características",
@@ -69,19 +69,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 teachingResearch: "Pensada para la docencia e investigación"
             },
             details: {
-                easy2useImg: "DisenoEs.jpg",
+                easy2useImg: "screenshots/workbench.jpg",
                 easy2useTitle: "De fácil y rápido uso",
                 easy2useDescription: "Casos de ética y actividades prediseñadas disponibles para el uso; Utilizable desde teléfonos y computadores portátiles, desde la sala de clases y la casa.",
-                teacherSupportImg: "ActividadTerminadaEs.jpg",
+                teacherSupportImg: "screenshots/dashboard.jpg",
                 teacherSupportTitle: "Un apoyo al profesor",
                 teacherSupportDescription: "Presenta respuestas de los estudiantes y estadísticas en tiempo real al profesor, permitiéndole elaborar una mejor retroalimentación, y un seguimiento personalizado a los estudiantes.",
-                sessionImg: "CracionActividadEs.jpg",
+                sessionImg: "screenshots/designs.jpg",
                 sessionsTitle: "Sesiones de casos altamente participativas",
                 sessionsDescription: "Todos los estudiantes participan, con igualdad de oportunidades, y en forma anónima o identificada según se requiera.",
-                centurySkillsImg: "ActividadEs.jpg",
+                centurySkillsImg: "screenshots/student-chat.jpg",
                 centurySkillsTitle: "Enfocada en el desarrollo habilidades del siglo 21",
                 centurySkillsDescription: "Actividades de análisis de casos de ética que estimulan el pensamiento crítico, la elaboración e intercambio de argumentos e ideas, la observación y análisis respetuoso de distintos puntos de vista, la comunicación escrita y trabajo colaborativo.",
-                teachingResearchImg: "ListaActividadesEs.jpg",
+                teachingResearchImg: "screenshots/student-response.jpg",
                 teachingResearchTitle: "Pensada para la docencia y la investigación",
                 teachingResearchDescription: "Diseñada para ser utilizada tanto por profesores de ética, como por profesores de otras disciplinas. Los datos recopilados por EthicApp pueden ser exportados para investigación bajo el consentimiento de los estudiantes, y respetando la legislación vigente en materia de protección de datos personales."
             },
