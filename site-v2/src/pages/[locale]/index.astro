@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopNav from '../../components/TopNav.astro';
 import Hero from '../../components/Hero.astro';
 import Features from '../../components/Features.astro';
 import CTA from '../../components/CTA.astro';
@@ -15,7 +16,8 @@ if (!locale || !locales.includes(locale as Locale)) return Astro.redirect('/es/'
 const t = copy[locale as Locale];
 ---
 <BaseLayout title={`EthicApp | ${t.nav[0]}`}>
-  <Hero title={t.heroTitle} body={t.heroBody} nav={t.nav} locale={locale} />
+  <TopNav locale={locale} nav={t.nav} />
+  <Hero title={t.heroTitle} body={t.heroBody} />
   <Features title={t.featuresTitle} items={t.features} />
 
   <section id="experiencias" class="mx-auto max-w-6xl px-6 py-10">
