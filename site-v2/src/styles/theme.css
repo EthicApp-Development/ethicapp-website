@@ -1,0 +1,41 @@
+:root {
+  --ea-link: #3730a3;
+  --ea-link-hover: #1d4ed8;
+  --ea-link-visited: #5b21b6;
+  --ea-surface-gradient: radial-gradient(1200px 600px at 10% -10%, rgba(99, 102, 241, 0.15), transparent 55%), radial-gradient(900px 500px at 90% -20%, rgba(20, 184, 166, 0.12), transparent 50%), linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+body {
+  background: var(--ea-surface-gradient);
+}
+
+a {
+  color: var(--ea-link);
+  transition: color 160ms ease;
+}
+
+a:hover {
+  color: var(--ea-link-hover);
+}
+
+a:visited {
+  color: var(--ea-link-visited);
+}
+
+.topnav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
