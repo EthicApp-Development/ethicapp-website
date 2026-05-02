@@ -83,15 +83,6 @@ img.card-img-top {
     background-color: var(--white_background);
 }
 
-img.characteristics-img {
-    border-radius: 2%;
-    transition: transform 0.3s;
-}
-
-img.characteristics-img:hover {
-    transform: scale(1.05);
-}
-
 img.logo-img-horizontal {
     width: 10em;
 }
