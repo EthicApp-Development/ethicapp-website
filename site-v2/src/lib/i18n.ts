@@ -133,7 +133,7 @@ const teamMembers: TeamMember[] = [
     name: 'Claudio Álvarez',
     role: 'Profesor Asociado',
     unit: [
-      'Facultad de ingeniería y ciencias aplicadas',
+      'Facultad de Ingeniería y Ciencias Aplicadas',
       'Universidad de los Andes, Chile'
     ],
     linkedin: 'https://www.linkedin.com/in/claudioalvarezgomez?utm_source=share_via&utm_content=profile&utm_medium=member_android'
@@ -142,8 +142,8 @@ const teamMembers: TeamMember[] = [
     name: 'Gustavo Zurita',
     role: 'Profesor Titular',
     unit: [
-      'Departamento de control de gestión y sistemas de información',
-      'Facultad de economía y negocios',
+      'Departamento de Control de Gestión y Sistemas de Información',
+      'Facultad de Economía y Negocios',
       'Universidad de Chile'
     ],
     linkedin: 'https://www.linkedin.com/in/gustavo-zurita-bb5a5244?utm_source=share_via&utm_content=profile&utm_medium=member_android'
@@ -152,8 +152,8 @@ const teamMembers: TeamMember[] = [
     name: 'Nelson Baloian',
     role: 'Profesor Asociado',
     unit: [
-      'Departamento de ciencias de la computación',
-      'Facultad de ciencias físicas y matemáticas',
+      'Departamento de Ciencias de la Computación',
+      'Facultad de Ciencias Físicas y Matemáticas',
       'Universidad de Chile'
     ]
   }
