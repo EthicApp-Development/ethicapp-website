@@ -1,0 +1,14 @@
+---
+const { title, items } = Astro.props;
+---
+<section id="caracteristicas" class="mx-auto max-w-6xl px-6 py-10">
+  <h2 class="text-3xl font-semibold">{title}</h2>
+  <div class="mt-6 grid gap-4 md:grid-cols-3">
+    {items.map((item: { title: string; description: string }) => (
+      <article class="rounded-xl bg-white p-5 shadow-sm">
+        <h3 class="text-xl font-semibold">{item.title}</h3>
+        <p class="mt-2 text-slate-600">{item.description}</p>
+      </article>
+    ))}
+  </div>
+</section>
