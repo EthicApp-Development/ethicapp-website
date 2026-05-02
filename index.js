@@ -1,15 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const yearTabs = document.querySelectorAll('#teamTabs button');
-    yearTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const selectedYear = tab.id.split('-')[1];
-            setUpOrgChart(selectedYear);
-            updateTeamImage(selectedYear);
-        });
-    });
-
-    // Inicialización con el año activo por defecto (2023)
-    const initialYear = document.querySelector('#teamTabs .active').id.split('-')[1];
+    const initialYear = '2024';
     setUpOrgChart(initialYear);
     updateTeamImage(initialYear);
 
@@ -20,6 +10,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     handleTeamCarousel();
     controlCarousel();
+
+    function handleHashChange() {
+        const hash = window.location.hash || '#home';
+        const sections = document.querySelectorAll('header, section.data-section');
+
+        sections.forEach(sec => {
+            if (sec.id && '#' + sec.id === hash) {
+                sec.classList.remove('d-none');
+            } else {
+                sec.classList.add('d-none');
+            }
+        });
+
+        const charDetails = document.getElementById('characteristics-detail-section');
+        if (charDetails) {
+            if (hash === '#characteristics-section') {
+                charDetails.classList.remove('d-none');
+            } else {
+                charDetails.classList.add('d-none');
+            }
+        }
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
 });
 
 function controlCarousel() {
@@ -114,132 +129,13 @@ function centerOrgChart(chart) {
 
 function setOrgChartData(year) {
     const data = {
-        '2023': [
-            // Datos del equipo 2023...
-            {
-                id: '0',
-                parentId: '',
-                name: 'Equipo EthicApp',
-                rol: '2023',
-                info: '',
-                image: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
-            },
-            {
-                id: '1',
-                parentId: '0',
-                name: '<a href="https://www.linkedin.com/in/claudioalvarezgomez/" target="_blank">Claudio Álvarez</a>',
-                rol: 'Director de Ingeniería y BDFL',
-                info: 'Prof. Asociado, Fac. Ingeniería<br>Universidad de los Andes, Chile<br>calvarez (at) uandes.cl',
-                image: './assets/team-pictures/claudio_alvarez.jpg',
-                _expanded: true,
-            },
-            {
-                id: '2',
-                parentId: '0',
-                name: '<a href="https://cl.linkedin.com/in/gustavo-zurita-bb5a5244" target="_blank">Gustavo Zurita</a>',
-                rol: 'Director Científico',
-                info: 'Profesor Titular, <a href="http://dcs.uchile.cl" target=_blank>DCS</a><br>Universidad de Chile<br>gzurita (at) fen.uchile.cl',
-                image: './assets/team-pictures/gustavo_zurita.jpg',
-                _expanded: true,
-            },
-            {
-                id: '3',
-                parentId: '1',
-                name: '<a href="https://github.com/ifgarces" target="_blank">Ignacio Garcés</a>',
-                rol: 'Mantenedor Titular',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/ignacio_garces.jpg',
-                _expanded: true,
-            },
-            {
-                id: '4',
-                parentId: '3',
-                name: '<a href="https://github.com/mabarraza" target="_blank">Miguel Barraza</a>',
-                rol: 'Mantenedor',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/miguel_barraza.jpg',
-                _expanded: true,
-            },
-            {
-                id: '5',
-                name: '<a href="https://github.com/javiersoto99" target="_blank">Javier Soto</a>',
-                parentId: '3',
-                rol: 'Desarrollador Frontend',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/javier_soto.jpg',
-                _expanded: true,
-            },
-            {
-                id: '6',
-                name: '<a href="https://github.com/jigracia" target="_blank">Joaquín Gracia</a>',
-                parentId: '3',
-                rol: 'Desarrollador Fullstack y Especialista DevOps',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/joaquin_gracia.jpg',
-                _expanded: true,
-            },
-            {
-                id: '7',
-                name: '<a href="https://github.com/NataliaEspinola" target="_blank">Natalia Espinola</a>',
-                parentId: '3',
-                rol: 'Ayudante Investigación',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/natalia_espinola.jpg',
-                _expanded: true,
-            },
-            {
-                id: '8',
-                name: '<a href="https://github.com/MatiasRiveraC" target="_blank">Matías Rivera</a>',
-                parentId: '3',
-                rol: 'Desarrollador Frontend',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/matias_rivera.jpg',
-                _expanded: true,
-            },
-            {
-                id: '9',
-                name: '<a href="https://github.com/vicentegana10" target="_blank">Vicente Gana</a>',
-                parentId: '3',
-                rol: 'Desarrollador Backend',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/vicente_gana.jpg',
-                _expanded: true,
-            },
-            {
-                id: '10',
-                name: '<a href="https://github.com/benjamin-gonzalez-diaz" target="_blank">Benjamín González</a>',
-                parentId: '3',
-                rol: 'Desarrollador Backend',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/benjamin_gonzalez.jpg',
-                _expanded: true,
-            },
-            {
-                id: '11',
-                name: '<a href="https://github.com/sdiazgt" target="_blank">Sebastián Díaz</a>',
-                parentId: '3',
-                rol: 'Desarrollador Fullstack',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/sebastian_diaz.jpg',
-                _expanded: true,
-            },
-            {
-                id: '12',
-                name: '<a href="https://github.com/SantiagoFigueroaMc" target="_blank">Santiago Figueroa</a>',
-                parentId: '3',
-                rol: 'Desarrollador Backend',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/sin_foto.jpg',
-                _expanded: true,
-            },
-        ],
         '2024': [
             // Datos del equipo 2024...
             {
                 id: '0',
                 parentId: '',
                 name: 'Equipo EthicApp',
-                rol: '2024',
+                rol: '',
                 info: '',
                 image: 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
             },
@@ -263,49 +159,13 @@ function setOrgChartData(year) {
             },
             {
                 id: '3',
-                parentId: '1',
-                name: '<a href="https://github.com/nicolasgebauer" target="_blank">Nicolás Gebauer</a>',
-                rol: 'Mantenedor',
-                info: 'Memorista Ing. Civil Computación UANDES',
+                parentId: '0',
+                name: 'Codex (OpenAI)',
+                rol: 'Desarrollador Principal',
+                info: '',
                 image: './assets/team-pictures/sin_foto.jpg',
                 _expanded: true,
-            },
-            {
-                id: '4',
-                name: '<a href="https://github.com/ManuelBentjerodt" target="_blank">Manuel Bentjerodt</a>',
-                parentId: '3',
-                rol: 'Desarrollador Fullstack',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/sin_foto.jpg',
-                _expanded: true,
-            },
-            {
-                id: '6',
-                name: '<a href="https://github.com/benjamin-gonzalez-diaz" target="_blank">Benjamín González</a>',
-                parentId: '3',
-                rol: 'Desarrollador Backend',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/benjamin_gonzalez.jpg',
-                _expanded: true,
-            },
-            {
-                id: '7',
-                name: '<a href="https://github.com/sdiazgt" target="_blank">Sebastián Díaz</a>',
-                parentId: '3',
-                rol: 'Desarrollador Fullstack',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/sebastian_diaz.jpg',
-                _expanded: true,
-            },
-            {
-                id: '8',
-                name: '<a href="https://github.com/MariM-16" target="_blank">María de los Ángeles Marín</a>',
-                parentId: '3',
-                rol: 'Desarrolladora Frontend',
-                info: 'Memorista Ing. Civil Computación UANDES',
-                image: './assets/team-pictures/sin_foto.jpg',
-                _expanded: true,
-            },
+            }
         ]
     };
     return data[year];
