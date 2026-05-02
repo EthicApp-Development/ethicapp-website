@@ -13,22 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleHashChange() {
         const hash = window.location.hash || '#home';
-        const sections = document.querySelectorAll('header, section.data-section');
+        const sections = document.querySelectorAll('header, section.data-section, #characteristics-detail-section');
+        const blogSection = document.getElementById('blog-section');
 
-        sections.forEach(sec => {
-            if (sec.id && '#' + sec.id === hash) {
-                sec.classList.remove('d-none');
-            } else {
-                sec.classList.add('d-none');
-            }
-        });
+        if (hash === '#blog-section') {
+            sections.forEach(sec => {
+                if (sec.id !== 'blog-section') {
+                    sec.classList.add('d-none');
+                }
+            });
+            blogSection.classList.remove('d-none');
+        } else {
+            sections.forEach(sec => {
+                if (sec.id !== 'blog-section') {
+                    sec.classList.remove('d-none');
+                }
+            });
+            blogSection.classList.add('d-none');
 
-        const charDetails = document.getElementById('characteristics-detail-section');
-        if (charDetails) {
-            if (hash === '#characteristics-section') {
-                charDetails.classList.remove('d-none');
-            } else {
-                charDetails.classList.add('d-none');
+            // Find the target to scroll to
+            const targetId = hash.substring(1);
+            if (targetId) {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         }
     }
