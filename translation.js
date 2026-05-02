@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var translations = {
         en: {
-            nav: ["Features", "Experiences", "Testimonials", "Documentation", "Research", "Team", "Development", "Language"],
+            nav: ["Home", "Blog", "Features", "Experiences", "Testimonials", "Documentation", "Research", "Team", "Development", "Language"],
             header: {
                 title: "Improve the ethical training of future professionals in various fields of knowledge",
                 description: "EthicApp: Social platform for the analysis and discussion of cases in academic, professional, and scientific ethics.",
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         },
         es: {
-            nav: ["Características", "Experiencias", "Testimonios", "Documentación", "Investigación", "Equipo", "Desarrollo", "Idioma"],
+            nav: ["Inicio", "Novedades", "Características", "Experiencias", "Testimonios", "Documentación", "Investigación", "Equipo", "Desarrollo", "Idioma"],
             header: {
                 title: "Mejora la formación ética de los futuros profesionales en distintas áreas del conocimiento",
                 description: "EthicApp: Plataforma social para el análisis y discusión de casos en ética académica, profesional y científica.",
@@ -130,11 +130,33 @@ document.addEventListener("DOMContentLoaded", function() {
     // Llama a updateTranslations al cargar la página
     updateTranslations();
 
+    function loadBlogContent(locale) {
+        var filePath = "./blog/novedades_" + locale + ".md";
+        fetch(filePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(text => {
+                document.getElementById('blog-content').innerHTML = marked.parse(text);
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+                document.getElementById('blog-content').innerHTML = "<p>Error loading blog content.</p>";
+            });
+    }
+
     window.changeLocale = function(locale) {
         polyglot.locale(locale);
         polyglot.replace(translations[locale]);
         updateTranslations();
+        loadBlogContent(locale);
     };
+
+    // Llama a loadBlogContent al cargar la página con el idioma predeterminado
+    loadBlogContent('es');
 
     // Agregar evento click a los items del menú de idiomas
     document.querySelectorAll('.dropdown-item').forEach(function(item) {

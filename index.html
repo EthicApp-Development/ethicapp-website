@@ -36,6 +36,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/polyglot.js/2.2.2/polyglot.min.js" integrity="sha512-dGbVa0XX8dFXCjPsvhYMn1BcgR67hiJsnzClNrc5PoIu7Gp9ZrRaV2dYW2fXcuPAI4xTSK000x9kNmIV1w+Z9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="translation.js"></script>
 </head>
 <body>
@@ -50,32 +51,38 @@
             <div class="collapse navbar-collapse" id="navbar-toggler">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#characteristics-section" data-i18n="nav.0">Características</a>
+                        <a class="nav-link" href="#home" data-i18n="nav.0">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience-section" data-i18n="nav.1">Experiencias</a>
+                        <a class="nav-link" href="#blog-section" data-i18n="nav.1">Novedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#characteristics-section" data-i18n="nav.2">Características</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience-section" data-i18n="nav.3">Experiencias</a>
                     </li>
                     <li class="nav-item d-none">
-                        <a class="nav-link" href="#testimonials-section" data-i18n="nav.2">Testimonios</a>
+                        <a class="nav-link" href="#testimonials-section" data-i18n="nav.4">Testimonios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" target="_blank" href="https://github.com/EthicApp-Development/organization" data-i18n="nav.3">Documentación</a>
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://github.com/EthicApp-Development/organization" data-i18n="nav.5">Documentación</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#research-section" data-i18n="nav.4">Investigación</a>
+                        <a class="nav-link" href="#research-section" data-i18n="nav.6">Investigación</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#team-section" data-i18n="nav.5">Equipo</a>
+                        <a class="nav-link" href="#team-section" data-i18n="nav.7">Equipo</a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://www.github.com/EthicApp-Development" target="_blank" class="nav-link" data-i18n="nav.6">Desarrollo</a>
+                        <a href="https://www.github.com/EthicApp-Development" target="_blank" class="nav-link" data-i18n="nav.8">Desarrollo</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe">
-                                <span class="language-selector" data-i18n="nav.7" >Idioma</span>
+                                <span class="language-selector" data-i18n="nav.9" >Idioma</span>
                             </i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
@@ -88,7 +95,7 @@
         </div>
     </nav>
 
-    <header>
+    <header id="home">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg">
@@ -111,6 +118,12 @@
     
 
     <div data-bs-spy="scroll" data-bs-target="#app-navbar">
+        <section class="data-section d-none" id="blog-section">
+            <div class="container-fluid">
+                <div id="blog-content"></div>
+            </div>
+        </section>
+
         <section class="data-section" id="characteristics-section">
             <div class="container-fluid">
                 <h1 class="text-start fw-bold" id="features-title" data-i18n="characteristics.title">Características</h1>
@@ -448,6 +461,34 @@
                 <p id="investigations-description" data-i18n="investigations.description" >Las siguiente lista cronológica de publicaciones presenta estudios que se relacionan tanto con el uso
                     de EthicApp en aula como con aspectos técnicos relativos a su desarrollo:</p>
                 <ul class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">Technology-Scaffolded Ethical Deliberation in Midwifery Education: Professors’ Reflections on a Digital Case-Based Experience</h5>
+                            <small>2026</small>
+                        </div>
+                        <p class="mb-1">Cornejo-Moreno, M. J., Martínez-Órdenes, M., Rojas-Cáceres, C., & Barahona, C. (2026). Technology-Scaffolded Ethical Deliberation in Midwifery Education: Professors’ Reflections on a Digital Case-Based Experience. Journal of Academic Ethics, 24(1), 51.</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">Desarrollo del razonamiento ético en Informática con metodologías activas apoyadas por la plataforma EthicApp</h5>
+                            <small>2025</small>
+                        </div>
+                        <p class="mb-1">Monés, A. M., Alonso-Prieto, V., Dimitriadis, Y., Villagrá-Sobrino, S., Zurita, G., & Álvarez, C. (2025). Desarrollo del razonamiento ético en Informática con metodologías activas apoyadas por la plataforma EthicApp. Actas de las Jenui, 10, 133-141.</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">Innovación en la Enseñanza de la Ética Empresarial usando Aplicaciones Móviles</h5>
+                            <small>2025</small>
+                        </div>
+                        <p class="mb-1">Valenzuela-Fernández, L., Zurita, G., & Alvarez, C. (2025). Innovación en la Enseñanza de la Ética Empresarial usando Aplicaciones Móviles. Spirat. Revista Académica de Docencia y Gestión Universitaria.</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-1">Low-Footprint NLP for Reducing Teachers’ Orchestration Load in Computer-Supported Case-Based Learning Environments</h5>
+                            <small>2025</small>
+                        </div>
+                        <p class="mb-1">Alvarez, C., Carvallo, A., & Zurita, G. (2025). Low-Footprint NLP for Reducing Teachers’ Orchestration Load in Computer-Supported Case-Based Learning Environments. Journal of Universal Computer Science, 31(13), 1463.</p>
+                    </a>
                     <a href="https://doi.org/10.1109/ACCESS.2025.3531241"
                         class="list-group-item list-group-item-action list-group-item-primary" target="_blank">
                         <div class="d-flex justify-content-between">
@@ -623,14 +664,6 @@
             <div class="container-fluid">
                 <h1 class="text-start fw-bold" id="team-title" data-i18n="team.title">Equipo</h1>
             
-                <ul class="nav nav-tabs" id="teamTabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="team-2024-tab" data-bs-toggle="tab" data-bs-target="#team-2024" type="button" role="tab" aria-controls="team-2024" aria-selected="true">2024</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="team-2023-tab" data-bs-toggle="tab" data-bs-target="#team-2023" type="button" role="tab" aria-controls="team-2023" aria-selected="false">2023</button>
-                    </li>
-                </ul>
                 <div class="row d-none" id="team-mobile">
                     <div class="col">
                         <img src="./assets/team-pictures/team_2023.jpg" class="d-block image-fluid"  id="team-carousel-picture" alt="...">
