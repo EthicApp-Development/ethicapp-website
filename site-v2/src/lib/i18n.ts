@@ -10,6 +10,14 @@ type Publication = {
   url?: string;
 };
 
+
+type TeamMember = {
+  name: string;
+  role: string;
+  unit: string[];
+  linkedin?: string;
+};
+
 type Section = {
   nav: string[];
   heroTitle: string;
@@ -27,6 +35,7 @@ type Section = {
   docs: string;
   blog: string;
   publications: Publication[];
+  teamMembers: TeamMember[];
 };
 
 const publications: Publication[] = [
@@ -117,6 +126,39 @@ const publications: Publication[] = [
   }
 ];
 
+
+
+const teamMembers: TeamMember[] = [
+  {
+    name: 'Claudio Álvarez',
+    role: 'Profesor Asociado',
+    unit: [
+      'Facultad de ingeniería y ciencias aplicadas',
+      'Universidad de los Andes, Chile'
+    ],
+    linkedin: 'https://www.linkedin.com/in/claudioalvarezgomez?utm_source=share_via&utm_content=profile&utm_medium=member_android'
+  },
+  {
+    name: 'Gustavo Zurita',
+    role: 'Profesor Titular',
+    unit: [
+      'Departamento de control de gestión y sistemas de información',
+      'Facultad de economía y negocios',
+      'Universidad de Chile'
+    ],
+    linkedin: 'https://www.linkedin.com/in/gustavo-zurita-bb5a5244?utm_source=share_via&utm_content=profile&utm_medium=member_android'
+  },
+  {
+    name: 'Nelson Baloian',
+    role: 'Profesor Asociado',
+    unit: [
+      'Departamento de ciencias de la computación',
+      'Facultad de ciencias físicas y matemáticas',
+      'Universidad de Chile'
+    ]
+  }
+];
+
 export const copy: Record<Locale, Section> = {
   es: {
     nav: ['Inicio', 'Características', 'Experiencias', 'Documentación', 'Investigación', 'Equipo', 'Desarrollo', 'Blog'],
@@ -138,7 +180,8 @@ export const copy: Record<Locale, Section> = {
     developmentBody: 'Proyecto open source. El desarrollo reciente ha sido automatizado en gran medida con Codex.',
     docs: 'Documentación',
     blog: 'Blog',
-    publications
+    publications,
+    teamMembers
   },
   en: {
     nav: ['Home', 'Features', 'Experiences', 'Documentation', 'Research', 'Team', 'Development', 'Blog'],
@@ -160,6 +203,7 @@ export const copy: Record<Locale, Section> = {
     developmentBody: 'Open-source project. Recent development has been largely automated with Codex.',
     docs: 'Documentation',
     blog: 'Blog',
-    publications
+    publications,
+    teamMembers
   }
 };
