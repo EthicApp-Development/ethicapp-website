@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
             header: {
                 title: "Mejora la formación ética de los futuros profesionales en distintas áreas del conocimiento",
                 description: "EthicApp: Plataforma social para el análisis y discusión de casos en ética académica, profesional y científica.",
-                img: "screenshots/design-view.jpg"
+                img: "screenshots/workbench.jpg"
             },
             characteristics: {
                 title: "Características",
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 teachingResearch: "Pensada para la docencia e investigación"
             },
             details: {
-                easy2useImg: "screenshots/workbench.jpg",
+                easy2useImg: "screenshots/design-view.jpg",
                 easy2useTitle: "De fácil y rápido uso",
                 easy2useDescription: "Casos de ética y actividades prediseñadas disponibles para el uso; Utilizable desde teléfonos y computadores portátiles, desde la sala de clases y la casa.",
                 teacherSupportImg: "screenshots/dashboard.jpg",
