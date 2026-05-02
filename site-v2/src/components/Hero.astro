@@ -1,0 +1,19 @@
+---
+const { title, body, locale, nav } = Astro.props;
+import LocaleSwitcher from './LocaleSwitcher.jsx';
+---
+<section id="inicio" class="mx-auto max-w-6xl px-6 py-12">
+  <nav class="mb-8 flex flex-wrap items-center justify-between gap-4">
+    <ul class="flex flex-wrap gap-4 text-sm font-medium text-slate-700">
+      {nav.map((item: string) => <li>{item}</li>)}
+    </ul>
+    <LocaleSwitcher client:load currentLocale={locale} />
+  </nav>
+  <div class="grid gap-8 md:grid-cols-2 md:items-center">
+    <div>
+      <h1 class="text-4xl font-bold leading-tight">{title}</h1>
+      <p class="mt-4 text-lg text-slate-600">{body}</p>
+    </div>
+    <img class="w-full rounded-2xl shadow" src="/assets/team/gustavo_zurita.jpg" alt="Equipo EthicApp" />
+  </div>
+</section>
