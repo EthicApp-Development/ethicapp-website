@@ -6,7 +6,8 @@ type Publication = {
   title: string;
   citation: string;
   year: number;
-  doi: string;
+  doi?: string;
+  url?: string;
 };
 
 type Section = {
@@ -30,6 +31,31 @@ type Section = {
 
 const publications: Publication[] = [
   {
+    title: 'Technology-Scaffolded Ethical Deliberation in Midwifery Education: Professors’ Reflections on a Digital Case-Based Experience',
+    citation: 'Cornejo-Moreno, M. J., Martínez-Órdenes, M., Rojas-Cáceres, C., & Barahona, C. (2026). Journal of Academic Ethics, 24(1), 51.',
+    year: 2026,
+    url: 'https://link.springer.com/article/10.1007/s10805-026-09559-0',
+    doi: '10.1007/s10805-026-09559-0'
+  },
+  {
+    title: 'Desarrollo del razonamiento ético en Informática con metodologías activas apoyadas por la plataforma EthicApp',
+    citation: 'Monés, A. M., Alonso-Prieto, V., Dimitriadis, Y., Villagrá-Sobrino, S., Zurita, G., & Álvarez, C. (2025). Actas de las Jenui, 10, 133-141.',
+    year: 2025,
+    url: 'https://aenui.org/actas/pdf/JENUI_2025_014.pdf'
+  },
+  {
+    title: 'Innovación en la Enseñanza de la Ética Empresarial usando Aplicaciones Móviles',
+    citation: 'Valenzuela-Fernández, L., Zurita, G., & Alvarez, C. (2025). Spirat. Revista Académica de Docencia y Gestión Universitaria.',
+    year: 2025,
+    doi: '10.20453/spirat.v3iNE1.5584'
+  },
+  {
+    title: 'Low-Footprint NLP for Reducing Teachers’ Orchestration Load in Computer-Supported Case-Based Learning Environments',
+    citation: 'Alvarez, C., Carvallo, A., & Zurita, G. (2025). Journal of Universal Computer Science, 31(13), 1463-1490.',
+    year: 2025,
+    doi: '10.3897/jucs.152864'
+  },
+{
     title: 'Measurement of Teacher’s Orchestration Load: A Framework and a Case Study on Tool Flexibility',
     citation: 'Alvarez, C., Amarasinghe, I., Zurita, G., Hernandez-Leo, D., Hakami, L., & Rojas, L. (2025). IEEE Access, 13, 39035–39050.',
     year: 2025,

@@ -42,7 +42,13 @@ const t = copy[locale as Locale];
             <p class="mt-1 text-sm text-slate-600">{pub.citation}</p>
             <p class="mt-2 text-sm">
               <span class="mr-2 inline-block rounded-full bg-slate-100 px-2 py-1 text-slate-700">{pub.year}</span>
-              <a class="text-indigo-700 underline" href={`https://doi.org/${pub.doi}`} target="_blank" rel="noreferrer">{pub.doi}</a>
+              {pub.doi ? (
+                <a class="text-indigo-700 underline" href={`https://doi.org/${pub.doi}`} target="_blank" rel="noreferrer">{pub.doi}</a>
+              ) : pub.url ? (
+                <a class="text-indigo-700 underline" href={pub.url} target="_blank" rel="noreferrer">Ver publicación</a>
+              ) : (
+                <span class="text-slate-500">DOI por confirmar</span>
+              )}
             </p>
           </li>
         ))}
