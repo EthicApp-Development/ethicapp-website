@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
             header: {
                 title: "Improve the ethical training of future professionals in various fields of knowledge",
                 description: "EthicApp: Social platform for the analysis and discussion of cases in academic, professional, and scientific ethics.",
-                img: "screenshots/design-view.jpg"
+                img: "screenshots/workbench.jpg"
             },
             characteristics: {
                 title: "Features",
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 teachingResearch: "Designed for teaching and research"
             },
             details: {
-                easy2useImg: "screenshots/workbench.jpg",
+                easy2useImg: "screenshots/design-view.jpg",
                 easy2useTitle: "Easy and Quick to Use",
                 easy2useDescription: "Pre-designed ethics cases and activities available for use; usable from phones and laptops, from the classroom and home.",
                 teacherSupportImg: "screenshots/dashboard.jpg",
