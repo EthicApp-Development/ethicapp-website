@@ -127,7 +127,9 @@ const publications: Publication[] = [
   }
 ];
 
-
+import claudioAlvarezAvatar from '/assets/team/claudio_alvarez.jpg';
+import gustavoZuritaAvatar from '/assets/team/gustavo_zurita.jpg';
+import nelsonBaloianAvatar from '/assets/team/nelson_baloian.jpg';
 
 const teamMembers: TeamMember[] = [
   {
@@ -138,7 +140,7 @@ const teamMembers: TeamMember[] = [
       'Universidad de los Andes, Chile'
     ],
     linkedin: 'https://www.linkedin.com/in/claudioalvarezgomez?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    avatar: '/assets/team/claudio_alvarez.jpg'
+    avatar: claudioAlvarezAvatar.src
   },
   {
     name: 'Gustavo Zurita',
@@ -149,7 +151,7 @@ const teamMembers: TeamMember[] = [
       'Universidad de Chile'
     ],
     linkedin: 'https://www.linkedin.com/in/gustavo-zurita-bb5a5244?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-    avatar: '/assets/team/gustavo_zurita.jpg'
+    avatar: gustavoZuritaAvatar.src
   },
   {
     name: 'Nelson Baloian',
@@ -160,7 +162,7 @@ const teamMembers: TeamMember[] = [
       'Universidad de Chile'
     ],
     linkedin: 'https://www.linkedin.com/in/nelson-baloian-9249bb4/',
-    avatar: '/assets/team/nelson_baloian.jpg'
+    avatar: nelsonBaloianAvatar.src
   }
 ];
 
