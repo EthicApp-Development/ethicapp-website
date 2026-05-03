@@ -17,51 +17,64 @@ const t = copy[locale as Locale];
 const isEs = locale === 'es';
 const safeTeamMembers = Array.isArray((t as any).teamMembers) ? (t as any).teamMembers : [];
 
+import designs from '/assets/screenshots/designs.jpg';
+import studentChat from '/assets/screenshots/student-chat.jpg';
+import dashboard from '/assets/screenshots/dashboard.jpg';
+
 const highlights = isEs
   ? [
       {
         title: 'Diseño instruccional listo para usar',
         text: 'Plantillas y flujos de discusión para desplegar actividades de razonamiento ético en pocos minutos.',
-        image: '/assets/screenshots/designs.jpg'
+        image: designs.src,
       },
       {
         title: 'Participación amplia desde móvil o laptop',
         text: 'Experiencia pensada para clases grandes y formatos híbridos, con interacción simple y segura.',
-        image: '/assets/screenshots/student-chat.jpg'
+        image: studentChat.src,
       },
       {
         title: 'Evidencia para retroalimentación docente',
         text: 'Resultados y trazas de participación que facilitan el seguimiento y la evaluación formativa.',
-        image: '/assets/screenshots/dashboard.jpg'
+        image: dashboard.src,
       },    
     ]
   : [
       {
         title: 'Instructional design ready to run',
         text: 'Case-based ethical reasoning activities can be launched in minutes using reusable templates.',
-        image: '/assets/screenshots/designs.jpg'
+        image: designs.src
       },
       {
         title: 'Broad participation on mobile or laptop',
         text: 'Designed for large and hybrid classes, with a simple and safe interaction model for students.',
-        image: '/assets/screenshots/student-chat.jpg'
+        image: studentChat.src
       },
       {
         title: 'Actionable evidence for teachers',
         text: 'Participation traces and outcomes help instructors provide timely formative feedback.',
-        image: '/assets/screenshots/dashboard.jpg'
+        image: dashboard.src
       },
     ];
 
+import uchile_logo from '/assets/institutions/uchile-logo.jpg';
+import uandes_logo from '/assets/institutions/uandes-logo.jpg';
+import buap_logo from '/assets/institutions/buap-logo.png';
+import unicauca_logo from '/assets/institutions/unicauca-logo.jpg';
+import uohiggins_logo from '/assets/institutions/uohiggins-logo.jpg';
+import upf_logo from '/assets/institutions/upf-logo.jpg';
+import utpl_logo from '/assets/institutions/utpl-logo.jpg';
+import uvigo_logo from '/assets/institutions/uvigo-logo.jpg';
+
 const institutions = [
-  {name: 'Universidad de Chile', logo: '/assets/institutions/uchile-logo.jpg'},
-  {name: 'Universidad de los Andes, Chile', logo: '/assets/institutions/uandes-logo.jpg'},
-  {name: 'Benemérita Universidad Autónoma de Puebla, México', logo: '/assets/institutions/buap-logo.png'},
-  {name: 'Universidad de Cauca, Colombia', logo: '/assets/institutions/unicauca-logo.jpg'},
-  {name: "Universidad de O'Higgins, Chile", logo: '/assets/institutions/uohiggins-logo.jpg'},
-  {name: 'Universitat Pompeu Fabra, España', logo: '/assets/institutions/upf-logo.jpg'},
-  {name: 'Universidad Técnica Particular de Loja, Ecuador', logo: '/assets/institutions/utpl-logo.jpg'},
-  {name: 'Universidade de Vigo, España', logo: '/assets/institutions/uvigo-logo.jpg'}
+  {name: 'Universidad de Chile', logo: uchile_logo.src},
+  {name: 'Universidad de los Andes, Chile', logo: uandes_logo.src},
+  {name: 'Benemérita Universidad Autónoma de Puebla, México', logo: buap_logo.src},
+  {name: 'Universidad de Cauca, Colombia', logo: unicauca_logo.src},
+  {name: "Universidad de O'Higgins, Chile", logo: uohiggins_logo.src},
+  {name: 'Universitat Pompeu Fabra, España', logo: upf_logo.src},
+  {name: 'Universidad Técnica Particular de Loja, Ecuador', logo: utpl_logo.src},
+  {name: 'Universidade de Vigo, España', logo: uvigo_logo.src}
 ];
 ---
 <BaseLayout title={`EthicApp | ${t.nav[0]}`}>

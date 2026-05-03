@@ -1,5 +1,6 @@
 ---
 const { title, body } = Astro.props;
+import workbench from '../../assets/screenshots/workbench.jpg';
 ---
 <section id="inicio" class="mx-auto max-w-6xl px-6 py-12">
   <div class="grid gap-8 md:grid-cols-2 md:items-center">
@@ -7,6 +8,6 @@ const { title, body } = Astro.props;
       <h1 class="text-4xl font-bold leading-tight">{title}</h1>
       <p class="mt-4 text-lg text-slate-600">{body}</p>
     </div>
-    <img class="w-full rounded-md shadow" src="/assets/screenshots/workbench.jpg" alt="EthicApp Workbench" />
+    <img class="w-full rounded-md shadow" src={workbench.src} alt="EthicApp Workbench" />
   </div>
 </section>

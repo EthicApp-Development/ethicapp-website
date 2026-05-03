@@ -1,5 +1,8 @@
 ---
 const { label } = Astro.props;
+import uandes_ing_logo from '../../assets/institutions/uandes-ing-logo.png';
+import uchile_eco_logo from '../../assets/institutions/uchile-eco-logo.png';  
+import github_logo from '../../assets/github-logo-white.svg';
 ---
 <section id="footer" class="mx-auto max-w-6xl px-6 py-12">
   <div class="rounded-lg bg-blue-700 p-8 text-white">
@@ -8,7 +11,7 @@ const { label } = Astro.props;
       
       <a href="https://ing.uandes.cl" target="_blank" rel="noreferrer">
         <img 
-          src="/assets/institutions/uandes-ing-logo.png"
+          src={uandes_ing_logo.src}
           alt="ING Universidad de los Andes"
           class="h-16 object-contain"
         />
@@ -16,7 +19,7 @@ const { label } = Astro.props;
 
       <a href="https://fen.uchile.cl" target="_blank" rel="noreferrer">
         <img 
-          src="/assets/institutions/uchile-eco-logo.png"
+          src={uchile_eco_logo.src}
           alt="FEN Universidad de Chile"
           class="h-16 object-contain"
         />
@@ -24,7 +27,7 @@ const { label } = Astro.props;
 
       <a href="https://github.com/EthicApp-Development/organization" target="_blank" rel="noreferrer">
         <img 
-          src="/assets/github-logo-white.svg"
+          src={github_logo.src}
           alt="GitHub"
           class="h-16 object-contain"
         />
