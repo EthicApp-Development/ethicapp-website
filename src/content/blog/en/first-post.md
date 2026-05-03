@@ -1,10 +1,10 @@
 ---
-title: "First EthicApp v2 post"
-description: "We launched the new Astro + React islands + Tailwind site prototype."
-pubDate: 2026-05-02
+title: "Teacher Training Course at the University of Valladolid"
+description: "Researchers Claudio Álvarez and Gustavo Zurita participated as lecturers in the teacher training course \"Design of Ethical Cases and Teaching Strategies with EthicApp\", organized by the Teaching Innovation Laboratory of the University of Valladolid (LIDUva). The three-session course was held twice, during March and April 2026. It was led by Dr. Yannis Dimitriadis, Full Professor at the same institution and Director of the historic GSIC/EMIC research group (Intelligent and Cooperative Systems / Education, Media, Computer Science and Culture). Dr. Alejandra Martínez, Full Professor at UVa and GSIC/EMIC researcher, also participated."
+pubDate: 2026-05-04
 locale: en
 ---
 
-This is the first blog post for the **site-v2** prototype.
+The course brought together academics from different academic units at UVa and covered theory on moral psychology, ethical reasoning and decision-making, and instructional design for the case-method approach.
 
-We'll share product updates, research notes, and development progress here.
+On the practical side, it included the design and implementation of activities for EthicApp by participants, along with participation in model EthicApp cases on research ethics and academic ethics.
