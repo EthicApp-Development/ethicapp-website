@@ -1,11 +1,12 @@
 ---
 title: "Curso de formación docente en Universidad de Valladolid"
 description: "Los investigadores Claudio Álvarez y Gustavo Zurita participaron como relatores en el curso de formación docente \"Diseño de casos éticos y estrategias de enseñanza con Ethicapp\", del Laboratorio de Innovación Docente de la Universidad de Valladolid (LIDUva)."
-pubDate: 2026-05-04
+pubDate: 2026-05-04 16:00 UTC-4
 locale: es
 ---
 
-### 4 de Mayo de 2026
+# Curso de formación docente en Universidad de Valladolid
+*4 de Mayo de 2026*
 
 Los investigadores Claudio Álvarez y Gustavo Zurita participaron como relatores en el curso de formación docente "Diseño de casos éticos y estrategias de enseñanza con Ethicapp", del Laboratorio de Innovación Docente de la Universidad de Valladolid (LIDUva). El curso de tres sesiones fue realizado en dos oportunidades, en los meses de marzo y abril de 2026. Fue liderado por el Dr. Yannis Dimitriadis, Catedrático de la misma institución, Director del histórico grupo de investigación GSIC/EMIC (Grupo de Sistemas Inteligentes y Cooperativos / Educación, Medios, Informática y Cultura). También participó la Dra. Alejandra Martínez, Catedrática de la UVa e investigadora de GSIC/EMIC.
 
