@@ -7,6 +7,9 @@
 
 body {
   background: var(--ea-surface-gradient);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 a {
