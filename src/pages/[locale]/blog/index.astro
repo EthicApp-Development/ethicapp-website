@@ -15,7 +15,7 @@ const posts = (await getCollection('blog', ({ data }) => data.locale === locale 
 ---
 <BaseLayout title={`Blog | ${locale}`}>
   <TopNav locale={locale} nav={copy[(locale as Locale)].nav} />
-  <main class="mx-auto max-w-3xl px-6 py-12">
+  <main class="mx-auto max-w-4xl px-6 py-12">
     <h1 class="text-4xl font-bold">Blog</h1>
     <ul class="mt-8 space-y-5">
       {posts.map((post) => (
