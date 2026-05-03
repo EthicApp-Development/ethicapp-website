@@ -1,7 +1,9 @@
 ---
 import LocaleSwitcher from './LocaleSwitcher.jsx';
-import EthicappLogo from '../../assets/ethicapp-logo.png';
+import EthicappLogo from '/assets/EthicApp-logo.png';
+
 const { locale, nav } = Astro.props;
+const [homeLabel, featuresLabel, experiencesLabel, , researchLabel, teamLabel, developmentLabel, blogLabel] = nav;
 ---
 <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
   <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
@@ -9,13 +11,13 @@ const { locale, nav } = Astro.props;
       <img src={EthicappLogo.src} alt="EthicApp logo" class="brand-logo" />
     </a>
     <ul class="flex flex-wrap gap-4 text-sm font-medium text-slate-700">
-      <li><a href={`/${locale}/#inicio`}>{nav[0]}</a></li>
-      <li><a href={`/${locale}/#caracteristicas`}>{nav[1]}</a></li>
-      <li><a href={`/${locale}/#experiencias`}>{nav[2]}</a></li>
-      <li><a href={`/${locale}/#investigacion`}>{nav[4]}</a></li>
-      <li><a href={`/${locale}/#equipo`}>{nav[5]}</a></li>
-      <li><a href={`/${locale}/#desarrollo`}>{nav[6]}</a></li>
-      <li><a href={`/${locale}/blog/`}>{nav[7]}</a></li>
+      <li><a href={`/${locale}/#inicio`}>{homeLabel}</a></li>
+      <li><a href={`/${locale}/#caracteristicas`}>{featuresLabel}</a></li>
+      <li><a href={`/${locale}/#experiencias`}>{experiencesLabel}</a></li>
+      <li><a href={`/${locale}/#investigacion`}>{researchLabel}</a></li>
+      <li><a href={`/${locale}/#equipo`}>{teamLabel}</a></li>
+      <li><a href={`/${locale}/#desarrollo`}>{developmentLabel}</a></li>
+      <li><a href={`/${locale}/blog/`}>{blogLabel}</a></li>
     </ul>
     <LocaleSwitcher client:load currentLocale={locale} />
   </nav>
