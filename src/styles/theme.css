@@ -1,0 +1,55 @@
+:root {
+  --ea-link: #2649ec;
+  --ea-link-hover: #071c78;
+  --ea-link-visited: #2649ec;
+  --ea-surface-gradient: radial-gradient(1200px 600px at 10% -10%, rgba(99, 101, 241, 0.432), transparent 55%), radial-gradient(900px 500px at 90% -20%, rgba(20, 184, 166, 0.12), transparent 50%), linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+body {
+  background: var(--ea-surface-gradient);
+}
+
+a {
+  color: var(--ea-link);
+  transition: color 160ms ease;
+}
+
+a:hover {
+  color: var(--ea-link-hover);
+}
+
+a:visited {
+  color: var(--ea-link-visited);
+}
+
+.topnav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 128px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+section#inicio {
+  background-image: url('/assets/heading-background.jpg');
+  color: white;
+}
+
+section#inicio p {
+  color: white;
+}
+
+section#footer {
+  background-image: url('/assets/heading-background.jpg');
+  color: white;
+}

@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopNav from '../../components/TopNav.astro';
+import Hero from '../../components/Hero.astro';
+import Features from '../../components/Features.astro';
+import CTA from '../../components/CTA.astro';
+import { copy, locales, type Locale } from '../../lib/i18n';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+if (!locale || !locales.includes(locale as Locale)) return Astro.redirect('/es/');
+
+const t = copy[locale as Locale];
+const isEs = locale === 'es';
+const safeTeamMembers = Array.isArray((t as any).teamMembers) ? (t as any).teamMembers : [];
+
+const highlights = isEs
+  ? [
+      {
+        title: 'Diseño instruccional listo para usar',
+        text: 'Plantillas y flujos de discusión para desplegar actividades de razonamiento ético en pocos minutos.',
+        image: '/assets/screenshots/designs.jpg'
+      },
+      {
+        title: 'Participación amplia desde móvil o laptop',
+        text: 'Experiencia pensada para clases grandes y formatos híbridos, con interacción simple y segura.',
+        image: '/assets/screenshots/student-chat.jpg'
+      },
+      {
+        title: 'Evidencia para retroalimentación docente',
+        text: 'Resultados y trazas de participación que facilitan el seguimiento y la evaluación formativa.',
+        image: '/assets/screenshots/dashboard.jpg'
+      },    
+    ]
+  : [
+      {
+        title: 'Instructional design ready to run',
+        text: 'Case-based ethical reasoning activities can be launched in minutes using reusable templates.',
+        image: '/assets/screenshots/designs.jpg'
+      },
+      {
+        title: 'Broad participation on mobile or laptop',
+        text: 'Designed for large and hybrid classes, with a simple and safe interaction model for students.',
+        image: '/assets/screenshots/student-chat.jpg'
+      },
+      {
+        title: 'Actionable evidence for teachers',
+        text: 'Participation traces and outcomes help instructors provide timely formative feedback.',
+        image: '/assets/screenshots/dashboard.jpg'
+      },
+    ];
+
+const institutions = [
+  {name: 'Universidad de Chile', logo: '/assets/institutions/uchile-logo.jpg'},
+  {name: 'Universidad de los Andes, Chile', logo: '/assets/institutions/uandes-logo.jpg'},
+  {name: 'Benemérita Universidad Autónoma de Puebla, México', logo: '/assets/institutions/buap-logo.png'},
+  {name: 'Universidad de Cauca, Colombia', logo: '/assets/institutions/unicauca-logo.jpg'},
+  {name: "Universidad de O'Higgins, Chile", logo: '/assets/institutions/uohiggins-logo.jpg'},
+  {name: 'Universitat Pompeu Fabra, España', logo: '/assets/institutions/upf-logo.jpg'},
+  {name: 'Universidad Técnica Particular de Loja, Ecuador', logo: '/assets/institutions/utpl-logo.jpg'},
+  {name: 'Universidade de Vigo, España', logo: '/assets/institutions/uvigo-logo.jpg'}
+];
+---
+<BaseLayout title={`EthicApp | ${t.nav[0]}`}>
+  <TopNav locale={locale} nav={t.nav} />
+  <Hero title={t.heroTitle} body={t.heroBody} />
+  <section id="highlights" class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="text-3xl font-semibold">{isEs ? 'Highlights de EthicApp' : 'EthicApp Highlights'}</h2>
+    <div class="mt-6 grid gap-4 md:grid-cols-3">
+      {highlights.map((item, idx) => (
+        <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="mb-3 flex h-36 w-full h-64 overflow-hidden items-center justify-center rounded-lg border-2 border-solid border-slate-100 bg-slate-50 text-center text-xs text-slate-500">
+            <img src={item.image} alt={item.title} class="w-full h-full object-cover" />
+          </div>
+          <h3 class="text-lg font-semibold">{item.title}</h3>
+          <p class="mt-2 text-sm text-slate-600">{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </section>  
+
+  <Features title={t.featuresTitle} items={t.features} />  
+
+  <section id="experiencias" class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="text-3xl font-semibold">{t.experiencesTitle}</h2>
+    <p class="mt-3 text-slate-600">
+      {isEs
+        ? 'EthicApp ha sido implementado en instituciones de educación superior en varios países de América Latina y Europa. Si bien la mayor parte de las implementaciones han sido con cohortes hispanas, el software se encuentra adaptado al inglés.'
+        : 'EthicApp has been implemented in higher education institutions across several Latin American and European countries. While most implementations have been with Spanish-speaking cohorts, English language is supported.'}
+    </p>
+    <div class="mt-5 flex snap-x gap-4 overflow-x-auto pb-2">
+      {institutions.map((institution) => (
+        <article class="min-w-[220px] snap-start rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div class="mb-3 flex h-20 items-center justify-center rounded-md border-slate-300 text-xs text-slate-500">
+            <img src={institution.logo} alt={`${institution.name} logo`} class="max-h-full object-contain" />
+          </div>
+          <p class="text-xs font-light text-center">{institution.name}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="investigacion" class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="text-3xl font-semibold">{t.researchTitle}</h2>
+    <p class="mt-3 text-slate-600">{t.researchBody}</p>
+    <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h3 class="text-xl font-semibold">{t.publicationsTitle}</h3>
+      <ol class="mt-4 space-y-4">
+        {t.publications.map((pub) => (
+          <li class="rounded-lg border border-slate-100 p-4">
+            <p class="font-semibold text-slate-900">{pub.title}</p>
+            <p class="mt-1 text-sm text-slate-600">{pub.citation}</p>
+            <p class="mt-2 text-sm">
+              <span class="mr-2 inline-block rounded-full bg-slate-100 px-2 py-1 text-slate-700">{pub.year}</span>
+              {pub.doi ? (
+                <a class="text-blue-700 underline" href={`https://doi.org/${pub.doi}`} target="_blank" rel="noreferrer">{pub.doi}</a>
+              ) : pub.url ? (
+                <a class="text-blue-700 underline" href={pub.url} target="_blank" rel="noreferrer">Ver publicación</a>
+              ) : (
+                <span class="text-slate-500">DOI por confirmar</span>
+              )}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section id="equipo" class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="text-3xl font-semibold">{t.teamTitle}</h2>
+    <div class="mt-5 grid gap-4 md:grid-cols-2">
+      {safeTeamMembers.map((member: any) => (
+      <article class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        
+        <img
+          src={member.avatar}
+          alt={member.name}
+          class="h-16 w-16 rounded-full object-cover shrink-0"
+        />
+
+        <div>
+          <h3 class="text-xl font-semibold">
+            {member.linkedin ? (
+              <a class="text-blue-700 underline" href={member.linkedin} target="_blank" rel="noreferrer">
+                {member.name}
+              </a>
+            ) : member.name}
+          </h3>
+
+          <p class="text-slate-700">{member.role}</p>
+
+          <ul class="mt-2 space-y-1 text-sm text-slate-600">
+            {member.unit.map((line: any) => (
+              <li>{line}</li>
+            ))}
+          </ul>
+        </div>
+
+      </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="desarrollo" class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="text-3xl font-semibold">{t.developmentTitle}</h2>
+    <p class="mt-3 text-slate-600">{t.developmentBody}</p>
+  </section>
+
+  <section id="blog" class="mx-auto max-w-6xl px-6 py-10">
+    <h2 class="text-3xl font-semibold">{t.blog}</h2>
+    <p class="mt-3"><a class="text-blue-700 underline" href={`/${locale}/blog/`}>Ir al blog</a></p>
+  </section>
+
+  <CTA label={t.developmentTitle} />
+</BaseLayout>
