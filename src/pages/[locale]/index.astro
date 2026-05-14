@@ -81,7 +81,7 @@ const institutions = [
 ---
 <BaseLayout title={`EthicApp | ${t.nav[0]}`}>
   <TopNav locale={locale} nav={t.nav} />
-  <Hero title={t.heroTitle} body={t.heroBody} />
+  <Hero title={t.heroTitle} body={t.heroBody} accessLabel={t.heroAccessLabel} accessHref={`/${locale}/acceder/`} />
   <section id="highlights" class="mx-auto max-w-6xl px-6 py-10">
     <h2 class="text-3xl font-semibold">{isEs ? 'Highlights de EthicApp' : 'EthicApp Highlights'}</h2>
     <div class="mt-6 grid gap-4 md:grid-cols-3">
