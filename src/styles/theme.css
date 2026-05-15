@@ -1,3 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
   --ea-link: #2649ec;
   --ea-link-hover: #071c78;
