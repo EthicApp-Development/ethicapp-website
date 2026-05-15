@@ -201,7 +201,7 @@ export const copy: Record<Locale, Section> = {
     accessLead: 'El equipo desarrollador cuenta con una instalación pública de EthicApp a cargo de la Universidad de los Andes, Chile.',
     accessBody: 'Esta instalación permite la realización de pruebas y la evaluación de la herramienta. Si tienes interés en probar EthicApp para docencia, te invitamos a contactar al equipo.',
     accessTeamLabel: 'Contactar al equipo',
-    accessContinueLabel: 'Continuar',
+    accessContinueLabel: 'Acceder a EthicApp',
     publications,
     teamMembers
   },
