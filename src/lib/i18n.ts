@@ -226,11 +226,11 @@ export const copy: Record<Locale, Section> = {
     developmentBody: 'Open-source project under the MIT license. The applications have been developed with the nodejs and React stack, however, part of the legacy software remains in AngularJS. PostgreSQL is the database used, along with Redis for query caching. Docker compose is the preferred way for deployment. Currently, most of the development is automated using tools like OpenAI Codex and GitHub Copilot. The source code is available in the EthicApp GitHub organization.',
     docs: 'Documentation',
     blog: 'Blog',
-    accessTitle: 'Enter EthicApp (UANDES)',
+    accessTitle: 'Access EthicApp (UANDES)',
     accessLead: 'The development team maintains a public EthicApp installation hosted by Universidad de los Andes, Chile.',
     accessBody: 'This installation supports testing and evaluation of the tool. If you are interested in trying EthicApp for teaching, please contact the team.',
     accessTeamLabel: 'Contact the team',
-    accessContinueLabel: 'Continue',
+    accessContinueLabel: 'Continue to EthicApp',
     publications,
     teamMembers
   }
