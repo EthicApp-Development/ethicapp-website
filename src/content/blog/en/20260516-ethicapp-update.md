@@ -1,4 +1,3 @@
-
 ---
 title: "Recent Advances in EthicApp Development"
 description: "Over the past month, EthicApp has advanced in its technical modernization, production deployment readiness, security strengthening, teacher experience improvements, and a new architecture for integrating external AI-based services."
