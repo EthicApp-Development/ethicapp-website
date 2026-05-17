@@ -9,12 +9,12 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.0",
-    "@astrojs/react": "^4.0.0",
-    "@astrojs/tailwind": "^6.0.0",
-    "astro": "^5.0.0",
+    "@astrojs/mdx": "^5.0.6",
+    "@astrojs/react": "^5.0.3",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "6.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^4.1.17"
   }
 }

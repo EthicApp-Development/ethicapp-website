@@ -23,6 +23,7 @@ type Section = {
   nav: string[];
   heroTitle: string;
   heroBody: string;
+  heroAccessLabel: string;
   featuresTitle: string;
   features: { title: string; description: string }[];
   experiencesTitle: string;
@@ -35,6 +36,11 @@ type Section = {
   developmentBody: string;
   docs: string;
   blog: string;
+  accessTitle: string;
+  accessLead: string;
+  accessBody: string;
+  accessTeamLabel: string;
+  accessContinueLabel: string;
   publications: Publication[];
   teamMembers: TeamMember[];
 };
@@ -171,6 +177,7 @@ export const copy: Record<Locale, Section> = {
     nav: ['Inicio', 'Características', 'Experiencias', 'Documentación', 'Investigación', 'Equipo', 'Desarrollo', 'Blog'],
     heroTitle: 'Mejora la formación ética de los futuros profesionales en distintas áreas del conocimiento',
     heroBody: 'EthicApp es una plataforma social para el análisis y discusión de casos en ética académica, profesional y científica.',
+    heroAccessLabel: 'Acceder a EthicApp (UANDES)',
     featuresTitle: 'Características',
     features: [
       { title: 'Fácil de usar', description: 'Actividades prediseñadas y uso simple desde celular o computador.' },
@@ -190,6 +197,11 @@ export const copy: Record<Locale, Section> = {
     developmentBody: 'Proyecto open source bajo licencia MIT. Las aplicaciones han sido desarrolladas con el stack de nodejs y React. Sin embargo, se mantiene parte legada del software en AngularJS. PostgreSQL es la base de datos utilizada, junto con Redis para caché de consultas. Docker compose es la forma preferida para el despliegue. Actualmente, la mayor parte del desarrollo es automatizada mediante herramientas como Codex de OpenAI y Copilot de GitHub. El código fuente se encuentra disponible en la organización de GitHub de EthicApp.',
     docs: 'Documentación',
     blog: 'Blog',
+    accessTitle: 'Acceder a EthicApp (UANDES)',
+    accessLead: 'El equipo desarrollador cuenta con una instalación pública de EthicApp a cargo de la Universidad de los Andes, Chile.',
+    accessBody: 'Esta instalación permite la realización de pruebas y la evaluación de la herramienta. Si tienes interés en probar EthicApp para docencia, te invitamos a contactar al equipo.',
+    accessTeamLabel: 'Contactar al equipo',
+    accessContinueLabel: 'Acceder a EthicApp',
     publications,
     teamMembers
   },
@@ -197,6 +209,7 @@ export const copy: Record<Locale, Section> = {
     nav: ['Home', 'Features', 'Experiences', 'Documentation', 'Research', 'Team', 'Development', 'Blog'],
     heroTitle: 'Improve ethics education for future professionals in different knowledge areas',
     heroBody: 'EthicApp is a social platform for analyzing and discussing academic, professional, and scientific ethics cases.',
+    heroAccessLabel: 'Access EthicApp (UANDES)',
     featuresTitle: 'Features',
     features: [
       { title: 'Easy to use', description: 'Ready-to-run activities usable from phones and laptops.' },
@@ -213,6 +226,11 @@ export const copy: Record<Locale, Section> = {
     developmentBody: 'Open-source project under the MIT license. The applications have been developed with the nodejs and React stack, however, part of the legacy software remains in AngularJS. PostgreSQL is the database used, along with Redis for query caching. Docker compose is the preferred way for deployment. Currently, most of the development is automated using tools like OpenAI Codex and GitHub Copilot. The source code is available in the EthicApp GitHub organization.',
     docs: 'Documentation',
     blog: 'Blog',
+    accessTitle: 'Access EthicApp (UANDES)',
+    accessLead: 'The development team maintains a public EthicApp installation hosted by Universidad de los Andes, Chile.',
+    accessBody: 'This installation supports testing and evaluation of the tool. If you are interested in trying EthicApp for teaching, please contact the team.',
+    accessTeamLabel: 'Contact the team',
+    accessContinueLabel: 'Continue to EthicApp',
     publications,
     teamMembers
   }
