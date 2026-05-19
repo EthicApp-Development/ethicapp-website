@@ -14,15 +14,15 @@ En este espacio, orientado a la reflexión sobre el uso de inteligencia artifici
 
 ## Sobre la conferencia
 
-La presentación abordó el desafío de enseñar a los estudiantes de ingeniería a **deliberar y justificar decisiones éticas en contextos socio-técnicos complejos**, destacando la necesidad de enfoques pedagógicos que integren tanto dimensiones cognitivas como sociales del razonamiento moral :contentReference.
+La presentación abordó el desafío de enseñar a los estudiantes de ingeniería a **deliberar y justificar decisiones éticas en contextos socio-técnicos complejos**, destacando la necesidad de enfoques pedagógicos que integren tanto dimensiones cognitivas como sociales del razonamiento moral.
 
-Se discutió el uso de **microinserciones éticas** como estrategia curricular, las cuales permiten integrar la reflexión ética dentro de cursos técnicos sin necesidad de crear asignaturas independientes, favoreciendo así un aprendizaje contextualizado y disciplinar :contentReference.
+Se discutió el uso de **microinserciones éticas** como estrategia curricular, las cuales permiten integrar la reflexión ética dentro de cursos técnicos sin necesidad de crear asignaturas independientes, favoreciendo así un aprendizaje contextualizado y disciplinar.
 
-Asimismo, se presentó **EthicApp** como una infraestructura CSCL (Computer-Supported Collaborative Learning) que permite diseñar y ejecutar actividades basadas en dilemas éticos, combinando fases de trabajo individual y colaborativo, incluyendo discusión grupal mediada por chat :contentReference.
+Asimismo, se presentó **EthicApp** como una infraestructura CSCL (Computer-Supported Collaborative Learning) que permite diseñar y ejecutar actividades basadas en dilemas éticos, combinando fases de trabajo individual y colaborativo, incluyendo discusión grupal mediada por chat.
 
 ## Inteligencia híbrida y futuro de la enseñanza de la ética
 
-Uno de los ejes centrales de la conferencia fue el concepto de **inteligencia híbrida**, entendido no como una simple suma de capacidades humanas y de inteligencia artificial, sino como un sistema de actividad distribuido donde la agencia humana es amplificada mediante herramientas tecnológicas diseñadas pedagógicamente :contentReference.
+Uno de los ejes centrales de la conferencia fue el concepto de **inteligencia híbrida**, entendido no como una simple suma de capacidades humanas y de inteligencia artificial, sino como un sistema de actividad distribuido donde la agencia humana es amplificada mediante herramientas tecnológicas diseñadas pedagógicamente.
 
 En este contexto, se presentaron avances del proyecto **IntelligentEthicApp**, que incorpora agentes basados en inteligencia artificial generativa para apoyar procesos como la argumentación ética y la mediación de discusiones grupales.
 
