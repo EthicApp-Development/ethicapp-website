@@ -47,6 +47,12 @@ type Section = {
 
 const publications: Publication[] = [
   {
+    title: 'Bridging intuition and reason: Exploring ethical decision-making through instructional design in case-based learning',
+    citation: 'Alvarez, C., Zurita, G., & Farías, A. (2026). The International Journal of Management Education, 24(3), Article 101500.',
+    year: 2026,
+    doi: '10.1016/j.ijme.2026.101500'
+  },
+  {
     title: 'Technology-Scaffolded Ethical Deliberation in Midwifery Education: Professors’ Reflections on a Digital Case-Based Experience',
     citation: 'Cornejo-Moreno, M. J., Martínez-Órdenes, M., Rojas-Cáceres, C., & Barahona, C. (2026). Journal of Academic Ethics, 24(1), 51.',
     year: 2026,
