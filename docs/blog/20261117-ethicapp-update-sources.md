@@ -64,3 +64,9 @@ Las entradas utilizan MDX para incluir `ScreenshotSequence.astro`, sin cambiar s
 La segunda captura añade aproximadamente 173 KiB al post en español; las imágenes conservan resolución completa y compresión sin pérdida.
 
 Corrección de reproducción: el cursor sobre las capturas ya no detiene el avance. El foco pausa la secuencia hasta pulsar Reproducir, que funciona aunque el botón conserve el foco. Al entrar en la zona visible se solicita la carga de ambas imágenes para que la captura inactiva no dependa de la carga diferida del navegador.
+
+## Secuencia del panel docente
+
+La figura del dashboard se reemplazó por tres capturas en ambos idiomas: `T21-dashboard-phase-responses.png` (respuestas), `T22-dashboard-response-detail.png` (detalle de una respuesta) y `T23-dashboard-group-chat.png` (chat del grupo). Se reutilizan `teacher-dashboard.webp` del blog y `response-detail.webp` y `teacher-chat.webp` de `public/images/showcase/{es,en}/`, sin duplicar archivos.
+
+La secuencia usa el mismo componente, intervalos y controles que el lanzamiento. Conserva junto a ella la aclaración de que las capturas del 8 de noviembre son anteriores al cronómetro. La selección se define en `dashboardShowcase()` de `src/lib/showcase.ts`.

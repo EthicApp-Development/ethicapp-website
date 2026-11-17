@@ -7,6 +7,7 @@ draft: false
 ---
 
 import ScreenshotSequence from '../../../components/ScreenshotSequence.astro';
+import { dashboardShowcase } from '../../../lib/showcase';
 
 # What's new in EthicApp: support for preparing, guiding and researching ethics learning
 *17 November 2026*
@@ -52,12 +53,13 @@ When sharing the screen with the class, **Hide names** replaces names with ident
 
 We also added **phase time limits**. Teachers can use an advisory timer, have phases advance automatically when time expires, or work without a timer, adding a minute when a discussion needs it. Ending the activity remains the teacher's decision.
 
-<figure class="my-8">
-  <a href="/images/blog/20261117-ethicapp-update/en/teacher-dashboard.webp" target="_blank" rel="noopener noreferrer" class="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
-    <img src="/images/blog/20261117-ethicapp-update/en/teacher-dashboard.webp" alt="Teacher dashboard with phases on the left, three participants' responses in the main area and activity controls at the top." width="2880" height="1800" loading="lazy" decoding="async" class="h-auto w-full rounded-xl border border-slate-200" />
-  </a>
-  <figcaption class="mt-3 text-base text-slate-600">The dashboard prioritizes responses and classroom progress. This screenshot shows the 8 November version, before the timer was added.</figcaption>
-</figure>
+<ScreenshotSequence
+  locale="en"
+  slides={dashboardShowcase('en')}
+  label="Teacher dashboard tour: responses, response detail and group chat"
+/>
+
+*The three views come from the 8 November demonstration, before the timer was added.*
 
 ## Feedback for revisiting one's own arguments
 

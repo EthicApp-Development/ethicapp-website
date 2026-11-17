@@ -33,6 +33,21 @@ export function teacherShowcase(locale: Locale) {
   ];
 }
 
+export function dashboardShowcase(locale: Locale) {
+  const es = locale === 'es';
+  const teacher = teacherShowcase(locale);
+  return [
+    teacher[0],
+    {
+      src: `/images/showcase/${locale}/response-detail.webp`,
+      title: es ? 'Explora una respuesta' : 'Explore a response',
+      alt: es ? 'Panel docente con la respuesta seleccionada y su justificación en un panel lateral.' : 'Teacher dashboard with the selected response and its justification in a side panel.',
+      caption: es ? 'Lee las razones de cada participante sin perder de vista las respuestas de la clase.' : 'Read each participant’s reasoning while keeping the class responses in view.'
+    },
+    teacher[3]
+  ];
+}
+
 export function homeHighlights(locale: Locale) {
   const es = locale === 'es';
   const home = `/images/showcase/${locale}`;

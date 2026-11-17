@@ -7,6 +7,7 @@ draft: false
 ---
 
 import ScreenshotSequence from '../../../components/ScreenshotSequence.astro';
+import { dashboardShowcase } from '../../../lib/showcase';
 
 # Novedades de EthicApp: más apoyo para preparar, acompañar e investigar el aprendizaje ético
 *17 de noviembre de 2026*
@@ -52,12 +53,13 @@ Para compartir la pantalla con la clase, la opción **Ocultar nombres** reemplaz
 
 Se sumó además la posibilidad de definir **tiempos por fase**. El docente puede trabajar con un cronómetro orientativo, con avance automático al cumplirse el tiempo o sin cronómetro, y agregar un minuto cuando la discusión lo necesita. El cierre de la actividad sigue siendo una decisión docente.
 
-<figure class="my-8">
-  <a href="/images/blog/20261117-ethicapp-update/es/teacher-dashboard.webp" target="_blank" rel="noopener noreferrer" class="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
-    <img src="/images/blog/20261117-ethicapp-update/es/teacher-dashboard.webp" alt="Panel docente con las fases a la izquierda, las respuestas de tres participantes al centro y los controles de avance de la actividad en la parte superior." width="2880" height="1800" loading="lazy" decoding="async" class="h-auto w-full rounded-xl border border-slate-200" />
-  </a>
-  <figcaption class="mt-3 text-base text-slate-600">El panel prioriza las respuestas y el avance de la clase. Esta captura muestra la versión del 8 de noviembre, anterior a la incorporación del cronómetro.</figcaption>
-</figure>
+<ScreenshotSequence
+  locale="es"
+  slides={dashboardShowcase('es')}
+  label="Recorrido por el panel docente: respuestas, detalle y chat grupal"
+/>
+
+*Las tres vistas corresponden a la demostración del 8 de noviembre, anterior a la incorporación del cronómetro.*
 
 ## Retroalimentación para revisar los propios argumentos
 
