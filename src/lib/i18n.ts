@@ -14,6 +14,7 @@ type Publication = {
 type TeamMember = {
   name: string;
   role: string;
+  roleEn?: string;
   unit: string[];
   linkedin?: string;
   avatar: string;
@@ -142,6 +143,7 @@ const publications: Publication[] = [
 import claudioAlvarezAvatar from '/assets/team/claudio_alvarez.jpg';
 import gustavoZuritaAvatar from '/assets/team/gustavo_zurita.jpg';
 import nelsonBaloianAvatar from '/assets/team/nelson_baloian.jpg';
+import yannisDimitriadisAvatar from '/assets/team/yannis_dimitriadis.jpg';
 
 const teamMembers: TeamMember[] = [
   {
@@ -175,6 +177,14 @@ const teamMembers: TeamMember[] = [
     ],
     linkedin: 'https://www.linkedin.com/in/nelson-baloian-9249bb4/',
     avatar: nelsonBaloianAvatar.src
+  },
+  {
+    name: 'Yannis Dimitriadis',
+    role: 'Catedrático · Director del Grupo GSIC/EMIC',
+    roleEn: 'Professor · Director of the GSIC/EMIC Group',
+    unit: ['Universidad de Valladolid'],
+    linkedin: 'https://www.linkedin.com/in/yannis-dimitriadis-92206130/',
+    avatar: yannisDimitriadisAvatar.src
   }
 ];
 
@@ -238,6 +248,6 @@ export const copy: Record<Locale, Section> = {
     accessTeamLabel: 'Contact the team',
     accessContinueLabel: 'Continue to EthicApp',
     publications,
-    teamMembers
+    teamMembers: teamMembers.map(member => ({ ...member, role: member.roleEn ?? member.role }))
   }
 };
