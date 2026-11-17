@@ -1,0 +1,111 @@
+---
+title: "What's new in EthicApp: support for preparing, guiding and researching ethics learning"
+description: "Developments from the second half of 2026: a renewed teacher dashboard, AI case analyses, an argumentation tutor, discussion agents and richer activity reports."
+pubDate: 2026-11-17T12:00:00-03:00
+locale: en
+draft: false
+---
+
+import ScreenshotSequence from '../../../components/ScreenshotSequence.astro';
+
+# What's new in EthicApp: support for preparing, guiding and researching ethics learning
+*17 November 2026*
+
+How do we prepare a good dilemma for a class? How can we follow what different groups are thinking as they discuss it? How can we help a written response express its supporting reasons more clearly? During the second half of 2026, we have worked on these questions, adding tools that support different stages of case-based ethics learning.
+
+These developments span material organization, feedback from artificial intelligence and the analysis of an activity afterwards. Our aim is to give teachers more resources for designing and guiding these experiences, with explicit choices about when and why to use AI.
+
+This overview covers developments incorporated through the releases published on 16 November. Availability in each installation depends on its version and the services the institution has enabled. The images come from our November demonstration, with fictional accounts and responses; click any screenshot to enlarge it.
+
+## Preparing and reusing materials more easily
+
+We redesigned the **Cases, Designs and Activities** pages to make materials easier to find and to distinguish between your own, shared and archived resources. It is now easier to see what is ready to use, what needs attention and which materials are already part of a learning activity.
+
+Teachers can also start a design directly from a case. Cases bring together the PDF text and complementary materials, such as YouTube videos and public Google Drive documents, while keeping information about authorship and usage rights.
+
+When it is time to use a design in class, a **two-step launch wizard** lets teachers select it, review its features and identify the activity with a description. Before launching, they can review its planned AI services and turn them off for that session. The same design can therefore support experiences with and without those tools.
+
+<ScreenshotSequence locale="en" />
+
+## New support for working with cases before class
+
+We introduced **Case Analyst**, a set of analyses teachers can request when preparing their materials:
+
+- **Case evaluation:** observations and recommendations about the text as a resource for discussion.
+- **Evidence inventory:** facts from the case with supporting quotations, distinguished from plausible statements the narrative does not establish.
+- **Topic listing:** suggested issues for the group to address during deliberation.
+
+Teachers can review and edit the inventory and topic listing. This review has a pedagogical purpose: it helps identify which information supports an interpretation and which issues deserve discussion. Saving designs that need it also generates a **claim typology** for their questions, providing context for the argumentation tutor.
+
+<figure class="my-8">
+  <a href="/images/blog/20261117-ethicapp-update/en/case-evidence.webp" target="_blank" rel="noopener noreferrer" class="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
+    <img src="/images/blog/20261117-ethicapp-update/en/case-evidence.webp" alt="Evidence inventory for the Sebastián case, showing facts, quotations and a notice asking the teacher to review the AI-generated draft." width="2880" height="1800" loading="lazy" decoding="async" class="h-auto w-full rounded-xl border border-slate-200" />
+  </a>
+  <figcaption class="mt-3 text-base text-slate-600">The inventory connects facts to passages in the case and lets teachers review the analysis before using it.</figcaption>
+</figure>
+
+## Following the class, with responses at the centre
+
+The **renewed teacher dashboard** gives responses more space and keeps activity controls within reach. A navigator provides access to the phases, while a side panel shows an individual response or a group's conversation. Teachers can also write in the group chat to guide the discussion.
+
+When sharing the screen with the class, **Hide names** replaces names with identifiers. Teachers can discuss responses without directly showing who wrote each one.
+
+We also added **phase time limits**. Teachers can use an advisory timer, have phases advance automatically when time expires, or work without a timer, adding a minute when a discussion needs it. Ending the activity remains the teacher's decision.
+
+<figure class="my-8">
+  <a href="/images/blog/20261117-ethicapp-update/en/teacher-dashboard.webp" target="_blank" rel="noopener noreferrer" class="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
+    <img src="/images/blog/20261117-ethicapp-update/en/teacher-dashboard.webp" alt="Teacher dashboard with phases on the left, three participants' responses in the main area and activity controls at the top." width="2880" height="1800" loading="lazy" decoding="async" class="h-auto w-full rounded-xl border border-slate-200" />
+  </a>
+  <figcaption class="mt-3 text-base text-slate-600">The dashboard prioritizes responses and classroom progress. This screenshot shows the 8 November version, before the timer was added.</figcaption>
+</figure>
+
+## Feedback for revisiting one's own arguments
+
+In individual phases, the **Argumentation Tutor** gives feedback on written justifications. Teachers choose which phases use it and whether it operates in basic or enhanced mode. Enhanced mode uses the case's evidence inventory and the question's claim typology to contextualize its analysis.
+
+The student interface brings together the response, criteria and comments. Feedback remains available when students reopen the activity, so they can return to it during later reflection.
+
+One of the latest developments is a new rubric for Spanish-language sessions, based on Toulmin's components of argumentation: **claim, evidence, warrant and qualifier**. Evaluation and feedback writing happen in separate steps; when a response is revised, both versions are evaluated independently and then compared. Research validation is ongoing, so this implementation does not establish improved learning outcomes or replace teacher judgment. English-language sessions retain their earlier evaluation prompts while the English version is developed and assessed.
+
+<figure class="my-8">
+  <a href="/images/blog/20261117-ethicapp-update/en/student-feedback.webp" target="_blank" rel="noopener noreferrer" class="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
+    <img src="/images/blog/20261117-ethicapp-update/en/student-feedback.webp" alt="Student view of argument feedback, with analysis criteria and comments to help revisit a written justification." width="2880" height="1800" loading="lazy" decoding="async" class="h-auto w-full rounded-xl border border-slate-200" />
+  </a>
+  <figcaption class="mt-3 text-base text-slate-600">An example of feedback presented to a student. The 8 November screenshot uses the scales that preceded the new Spanish-language rubric.</figcaption>
+</figure>
+
+## Agents that accompany peer discussion
+
+In group phases, **Polyadic Agents** can bring an AI agent into the chat. The design defines its discussion mode and display name. For example, it can introduce questions or counterpoints that invite the group to examine its reasons.
+
+The new **content coverage** mode uses the case's topics as a reference for deciding when to intervene and which aspect of the discussion to revisit. Its decisions are recorded for later analysis. This opens a line of research into supporting deliberation without unnecessarily interrupting exchanges between students.
+
+We also improved continuity: students can reopen a finished activity's chat in read-only mode.
+
+<figure class="my-8">
+  <a href="/images/blog/20261117-ethicapp-update/en/student-chat.webp" target="_blank" rel="noopener noreferrer" class="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
+    <img src="/images/blog/20261117-ethicapp-update/en/student-chat.webp" alt="Student interface during a group phase, with case instructions and a chat where an AI agent responds to a question about loyalty and academic integrity." width="2880" height="1800" loading="lazy" decoding="async" class="h-auto w-full rounded-xl border border-slate-200" />
+  </a>
+  <figcaption class="mt-3 text-base text-slate-600">A demonstration conversation with an agent identified by its nickname. It illustrates the chat interface, rather than the new content coverage mode.</figcaption>
+</figure>
+
+## More information for teaching reflection and research
+
+Downloadable **CSV reports** bring together an activity's responses and messages. They can now also include tutor feedback and agent records, linked to the contributions that prompted them.
+
+For research teams, this makes it possible to examine participants' decisions, their justifications and the support they received together. Tutor modes and the option to run activities without AI offer choices for designing comparisons, with the safeguards and consent appropriate to each study.
+
+<figure class="my-8">
+  <a href="/images/blog/20261117-ethicapp-update/en/research-report.webp" target="_blank" rel="noopener noreferrer" class="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
+    <img src="/images/blog/20261117-ethicapp-update/en/research-report.webp" alt="Example responses CSV displayed as a spreadsheet, with phases, justifications and tutor feedback columns." width="2880" height="1800" loading="lazy" decoding="async" class="h-auto w-full rounded-xl border border-slate-200" />
+  </a>
+  <figcaption class="mt-3 text-base text-slate-600">A visualization of an exported CSV with fictional data, rather than an EthicApp screen. It shows the tutor scales that preceded the new Spanish-language rubric.</figcaption>
+</figure>
+
+## Choices about AI and care for data
+
+Institutions can decide which AI services to enable through the management console. A new installation starts with no active AI services, and each activity keeps the policy it had at launch. Within that framework, teachers choose which analyses to request and which tools to include in their designs.
+
+During the semester, we also stopped requesting Chilean national identification numbers (RUT) and expanded administrative tools for handling account-forgetting requests, including the treatment of text held by AI services. These developments accompany the new features and support their use in educational and research settings.
+
+We continue to develop EthicApp with its teaching and research community. We are interested in hearing how these tools fit into your classes, which forms of support are useful and which questions deserve further investigation.

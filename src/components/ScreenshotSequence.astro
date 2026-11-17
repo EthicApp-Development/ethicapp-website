@@ -1,0 +1,223 @@
+---
+interface Slide {
+  src: string;
+  title: string;
+  alt: string;
+  caption: string;
+}
+
+interface Props {
+  locale: 'es' | 'en';
+  slides?: Slide[];
+  label?: string;
+  variant?: 'article' | 'hero';
+}
+
+const { locale, slides: providedSlides, label, variant = 'article' } = Astro.props;
+const hero = variant === 'hero';
+const es = locale === 'es';
+const base = `/images/blog/20261117-ethicapp-update/${locale}`;
+const slides = providedSlides ?? [
+  {
+    src: `${base}/launch-activity.webp`,
+    title: es ? 'Elegir diseño' : 'Choose a design',
+    alt: es
+      ? 'Primer paso del lanzamiento: búsqueda y selección de un diseño basado en el caso Sebastián.'
+      : 'First launch step: search and select a design based on the Sebastián case.',
+    caption: es
+      ? 'Busca el diseño que quieres utilizar y consulta su vista previa antes de continuar.'
+      : 'Find the design you want to use and check its preview before continuing.'
+  },
+  {
+    src: `${base}/launch-review.webp`,
+    title: es ? 'Revisar y lanzar' : 'Review and launch',
+    alt: es
+      ? 'Segundo paso del lanzamiento: descripción de la actividad y revisión de los servicios de IA antes de lanzarla.'
+      : 'Second launch step: describe the activity and review its AI services before launching.',
+    caption: es
+      ? 'Identifica la actividad, revisa los servicios de IA y decide si los utilizarás en esta sesión.'
+      : 'Identify the activity, review its AI services and decide whether to use them in this session.'
+  }
+];
+const buttonClass = 'rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700';
+---
+
+<screenshot-sequence
+  class:list={['block min-w-0', hero ? 'rounded-xl shadow-2xl' : 'my-8']}
+  role="region"
+  aria-label={label ?? (es ? 'Cómo lanzar una actividad: secuencia de dos pasos' : 'Launching an activity: a two-step sequence')}
+  data-play={es ? 'Reproducir' : 'Play'}
+  data-pause={es ? 'Pausar' : 'Pause'}
+>
+  <div data-frames>
+    {slides.map((slide, index) => (
+      <figure data-frame class="m-0" aria-label={`${index + 1} / ${slides.length}`}>
+        <a href={slide.src} target="_blank" rel="noopener noreferrer" class="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
+          <img src={slide.src} alt={slide.alt} width="2880" height="1800" loading={hero && index === 0 ? 'eager' : 'lazy'} fetchpriority={hero && index === 0 ? 'high' : 'auto'} decoding="async" class:list={['h-auto w-full rounded-xl', !hero && 'border border-slate-200']} />
+        </a>
+        <figcaption class={hero ? 'sr-only' : 'mt-3 text-base text-slate-600'}>
+          <strong class="block text-slate-900">{index + 1} / {slides.length} · {slide.title}</strong>
+          {slide.caption}
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+  <div data-controls hidden class:list={[
+    'flex-wrap items-center justify-between gap-3',
+    hero ? 'sr-only focus-within:not-sr-only focus-within:mt-3 focus-within:rounded-xl focus-within:bg-white focus-within:p-3' : 'mt-4'
+  ]}>
+    <div class="flex flex-wrap gap-2">
+      <button type="button" data-previous class={buttonClass} aria-label={es ? 'Mostrar el paso anterior' : 'Show the previous step'}>← {es ? 'Anterior' : 'Previous'}</button>
+      <button type="button" data-toggle class={buttonClass}>{es ? 'Pausar' : 'Pause'}</button>
+      <button type="button" data-next class={buttonClass} aria-label={es ? 'Mostrar el paso siguiente' : 'Show the next step'}>{es ? 'Siguiente' : 'Next'} →</button>
+    </div>
+    <span class="text-sm text-slate-500">{es ? 'Clic en la captura para ampliarla' : 'Click the screenshot to enlarge'}</span>
+  </div>
+</screenshot-sequence>
+
+<style>
+  /* Both steps remain readable when JavaScript is unavailable. */
+  screenshot-sequence:not([data-ready]) [data-frame] + [data-frame] {
+    margin-top: 2rem;
+  }
+
+  screenshot-sequence[data-ready] [data-frames] {
+    display: grid;
+  }
+
+  screenshot-sequence[data-ready] [data-frame] {
+    grid-area: 1 / 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 600ms ease-in-out;
+  }
+
+  screenshot-sequence[data-ready] [data-frame][data-active] {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+  }
+
+  screenshot-sequence[data-ready] [data-controls] {
+    display: flex;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    screenshot-sequence[data-ready] [data-frame] {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  class ScreenshotSequence extends HTMLElement {
+    private cleanup?: () => void;
+
+    connectedCallback() {
+      if (this.cleanup) return;
+      const frames = [...this.querySelectorAll<HTMLElement>('[data-frame]')];
+      const controls = this.querySelector<HTMLElement>('[data-controls]')!;
+      const toggle = this.querySelector<HTMLButtonElement>('[data-toggle]')!;
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const events = new AbortController();
+      const { signal } = events;
+      let current = 0;
+      let playing = !motion.matches;
+      let visible = false;
+      let pointerPlayback: boolean | undefined;
+      let timer: ReturnType<typeof setInterval> | undefined;
+
+      const stopTimer = () => {
+        clearInterval(timer);
+        timer = undefined;
+      };
+      const show = (index: number) => {
+        const image = frames[index].querySelector('img')!;
+        // Keep the current step visible if the next image is still loading or failed.
+        if (!image.complete || !image.naturalWidth) return;
+        current = index;
+        frames.forEach((frame, i) => {
+          frame.toggleAttribute('data-active', i === current);
+          frame.inert = i !== current;
+          frame.setAttribute('aria-hidden', String(i !== current));
+        });
+      };
+      const sync = () => {
+        stopTimer();
+        toggle.textContent = playing ? this.dataset.pause! : this.dataset.play!;
+        this.querySelector('[data-frames]')!.setAttribute('aria-live', playing ? 'off' : 'polite');
+        if (playing && visible && !document.hidden && !motion.matches) {
+          timer = setInterval(() => show((current + 1) % frames.length), 6000);
+        }
+      };
+      const navigate = (delta: number) => {
+        playing = false;
+        show((current + delta + frames.length) % frames.length);
+        sync();
+      };
+
+      frames.forEach((frame, i) => {
+        frame.toggleAttribute('data-active', i === current);
+        frame.inert = i !== current;
+        frame.setAttribute('aria-hidden', String(i !== current));
+      });
+      this.setAttribute('data-ready', '');
+      controls.hidden = false;
+      // Reduced-motion users keep manual controls, without automatic changes.
+      toggle.hidden = motion.matches;
+      // Pointer focus arrives before click: preserve the action the user saw
+      // before focus paused the sequence (especially a first click on Pause).
+      toggle.addEventListener('pointerdown', () => { pointerPlayback = !playing; }, { signal });
+      toggle.addEventListener('click', (event) => {
+        playing = event.detail > 0 ? (pointerPlayback ?? !playing) : !playing;
+        pointerPlayback = undefined;
+        sync();
+      }, { signal });
+      this.querySelector('[data-previous]')!.addEventListener('click', () => navigate(-1), { signal });
+      this.querySelector('[data-next]')!.addEventListener('click', () => navigate(1), { signal });
+      // Stop on keyboard interaction, but let an explicit Play click restart
+      // even while its button retains focus. Pointer hover does not stop playback.
+      this.addEventListener('focusin', () => {
+        playing = false;
+        sync();
+      }, { signal });
+      document.addEventListener('visibilitychange', sync, { signal });
+      motion.addEventListener('change', () => {
+        playing = false;
+        toggle.hidden = motion.matches;
+        sync();
+      }, { signal });
+      const observer = new IntersectionObserver(([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible) {
+          // The inactive frame is transparent and inert. Load its image explicitly
+          // rather than relying on the browser's lazy-loading visibility heuristic.
+          frames.forEach(frame => { frame.querySelector('img')!.loading = 'eager'; });
+        }
+        sync();
+      }, { threshold: 0.25 });
+      observer.observe(this);
+      sync();
+      this.cleanup = () => {
+        stopTimer();
+        observer.disconnect();
+        events.abort();
+        this.removeAttribute('data-ready');
+        frames.forEach(frame => {
+          frame.inert = false;
+          frame.removeAttribute('aria-hidden');
+        });
+        controls.hidden = true;
+      };
+    }
+
+    disconnectedCallback() {
+      this.cleanup?.();
+      this.cleanup = undefined;
+    }
+  }
+
+  if (!customElements.get('screenshot-sequence')) {
+    customElements.define('screenshot-sequence', ScreenshotSequence);
+  }
+</script>
