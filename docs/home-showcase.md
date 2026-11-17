@@ -8,7 +8,7 @@ La secuencia muestra únicamente las capturas con fundidos automáticos, sin tí
 
 La secuencia recorre cuatro vistas docentes:
 
-1. `T21-dashboard-phase-responses.png`: fases y respuestas.
+1. `T01-teacher-home.png`: inicio docente, accesos a materiales y actividades recientes.
 2. `T09-evidence-inventory.png`: análisis del caso.
 3. `T19-launch-description-ai.png`: revisión del lanzamiento.
 4. `T23-dashboard-group-chat.png`: seguimiento de la conversación grupal.
@@ -25,6 +25,6 @@ La primera imagen del hero tiene carga prioritaria. Las otras capturas del carru
 
 Se muestran en bloques amplios con texto e imagen, alternados en escritorio y apilados en pantallas pequeñas. Las capturas conservan su proporción completa y permiten abrir el archivo original para ampliarlo.
 
-Los archivos ya publicados con el blog se comparten entre ambas páginas. Solo se añadieron tres capturas por idioma en `public/images/showcase/`. Las siete capturas utilizadas por cada home suman aproximadamente 1,24 MiB en español y 1,21 MiB en inglés, con carga diferida en los highlights.
+Los archivos ya publicados con el blog se comparten entre ambas páginas. Se añadieron cuatro capturas por idioma en `public/images/showcase/`. Las siete capturas utilizadas por cada home suman aproximadamente 1,54 MiB en español y 1,52 MiB en inglés, con carga diferida en los highlights.
 
 La selección de capturas y sus textos localizados se mantiene en `src/lib/showcase.ts`. No se añadieron dependencias.

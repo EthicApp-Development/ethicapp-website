@@ -1,5 +1,15 @@
 import type { Locale } from './i18n';
 
+function dashboardOverview(locale: Locale) {
+  const es = locale === 'es';
+  return {
+    src: `/images/blog/20261117-ethicapp-update/${locale}/teacher-dashboard.webp`,
+    title: es ? 'Sigue el avance de tu clase' : 'Follow your class in real time',
+    alt: es ? 'Panel docente de EthicApp con las fases y las respuestas de los participantes.' : 'EthicApp teacher dashboard showing phases and participant responses.',
+    caption: es ? 'Las respuestas y los controles de la actividad, en una misma vista.' : 'Responses and activity controls, together in one view.'
+  };
+}
+
 // Reuse the full-resolution blog assets where the showcase captures coincide.
 export function teacherShowcase(locale: Locale) {
   const es = locale === 'es';
@@ -7,10 +17,10 @@ export function teacherShowcase(locale: Locale) {
   const home = `/images/showcase/${locale}`;
   return [
     {
-      src: `${blog}/teacher-dashboard.webp`,
-      title: es ? 'Sigue el avance de tu clase' : 'Follow your class in real time',
-      alt: es ? 'Panel docente de EthicApp con las fases y las respuestas de los participantes.' : 'EthicApp teacher dashboard showing phases and participant responses.',
-      caption: es ? 'Las respuestas y los controles de la actividad, en una misma vista.' : 'Responses and activity controls, together in one view.'
+      src: `${home}/teacher-home.webp`,
+      title: es ? 'Tu punto de partida para preparar la clase' : 'Your starting point for preparing a class',
+      alt: es ? 'Inicio de la interfaz docente de EthicApp, con accesos a casos, diseños y actividades.' : 'EthicApp teacher home with shortcuts to cases, designs and activities.',
+      caption: es ? 'Crea materiales, lanza una actividad y vuelve a tus sesiones recientes desde el inicio.' : 'Create materials, launch an activity and return to recent sessions from your home page.'
     },
     {
       src: `${blog}/case-evidence.webp`,
@@ -37,7 +47,7 @@ export function dashboardShowcase(locale: Locale) {
   const es = locale === 'es';
   const teacher = teacherShowcase(locale);
   return [
-    teacher[0],
+    dashboardOverview(locale),
     {
       src: `/images/showcase/${locale}/response-detail.webp`,
       title: es ? 'Explora una respuesta' : 'Explore a response',
